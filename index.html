@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio website for Jhonattan Rivera, Payments Expert."
+    />
+    <title>Jhonattan Rivera | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              page: "#e9e9e9",
+              darkpanel: "#020f0b",
+            },
+            fontFamily: {
+              heading: ["Urbanist", "ui-sans-serif", "system-ui", "sans-serif"],
+              body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Urbanist:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body id="top" class="bg-page font-body text-neutral-900 antialiased">
+    <div class="mx-auto max-w-[1900px]">
+      <main class="overflow-hidden">
+        <section id="site-nav" class="bg-[#fdfdfd] px-[5%] pt-4 md:pt-6">
+          <nav class="mx-auto flex w-full max-w-[1640px] items-center justify-between">
+            <a href="#top" class="shrink-0">
+              <img
+                src="assets/images/logo-jr.png"
+                alt="Jhonattan Rivera logo"
+                class="h-10 w-10"
+              />
+            </a>
+            <div class="hidden items-center gap-10 text-sm font-medium md:flex">
+              <a href="#foundation" class="hover:opacity-70">About</a>
+              <a href="#capabilities" class="hover:opacity-70">Approach</a>
+              <a href="#contact" class="hover:opacity-70">Contact</a>
+            </div>
+            <a
+              href="#contact"
+              class="inline-flex items-center rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition hover:bg-neutral-800"
+            >
+              Connect
+            </a>
+          </nav>
+        </section>
+
+        <section id="hero" class="bg-[#fdfdfd] px-[5%] py-14 md:py-20 lg:py-24">
+          <div class="mx-auto grid w-full max-w-[1260px] gap-10 lg:grid-cols-2 lg:items-center lg:gap-20">
+            <div>
+              <h1 class="font-heading mb-8 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+                Jhonattan Rivera
+              </h1>
+              <p class="max-w-[640px] text-[1.08rem] leading-relaxed">
+                Hello! 👋 I’m a Payments Expert with deep knowledge and hands-on
+                experience across the entire transaction flow, from gateways and
+                acquirers to issuers. My domain covers cards (Visa, Mastercard,
+                and other franchises), cash networks, and transfer methods. I
+                lead end-to-end project execution, aligning cross-functional
+                teams and managing client engagement. Technically fluent, I work
+                confidently with APIs, ISO8583, and SDK integrations, and I
+                bring a strong focus on fraud prevention.
+              </p>
+            </div>
+            <div>
+              <img
+                src="assets/images/hero-jr.png"
+                alt="Portrait of Jhonattan Rivera"
+                class="w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="foundation" class="px-[5%] py-16 md:py-24">
+          <div class="mx-auto max-w-[980px] text-center">
+            <p class="mb-4 text-sm font-semibold">Foundation</p>
+            <h2 class="font-heading mb-8 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
+              Expertise built on regulatory precision and execution
+            </h2>
+            <p class="mx-auto mb-10 max-w-[960px] text-[1.08rem] leading-relaxed md:text-lg">
+              I navigate the full payments ecosystem with deep technical
+              fluency, APIs, transaction flows, fraud prevention, while
+              maintaining strict compliance with PCI DSS and Latin American
+              regulatory frameworks. My work centers on turning operational
+              complexity into streamlined processes through continuous
+              improvement, strategic automation, and the kind of technical
+              leadership that scales reliably.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-5">
+              <img
+                src="assets/images/foundation-1.jpeg"
+                alt="Foundation logo U"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+              <img
+                src="assets/images/foundation-2.jpeg"
+                alt="Foundation logo Kushki"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+              <img
+                src="assets/images/foundation-3.jpeg"
+                alt="Foundation logo Nexi"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+              <img
+                src="assets/images/foundation-4.jpeg"
+                alt="Foundation logo A"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="capabilities" class="bg-darkpanel px-[5%] py-16 text-white md:py-24">
+          <div class="mx-auto max-w-[1360px]">
+            <div class="mx-auto mb-16 max-w-[980px] text-center">
+              <p class="mb-4 text-sm font-semibold">Capabilities</p>
+              <h2 class="font-heading mb-8 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
+                What I bring to the table
+              </h2>
+              <p class="text-[1.08rem] leading-relaxed md:text-lg">
+                Interconnected disciplines refined through years of real
+                implementations and proven results. Each built on deep
+                technical expertise and unwavering strategic clarity, spanning
+                across the full spectrum of industry participants. Our approach
+                integrates practical experience with comprehensive industry
+                knowledge.
+              </p>
+            </div>
+            <div class="grid gap-12 md:grid-cols-3 md:gap-10">
+              <article class="text-center">
+                <div class="mb-6 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-heading mb-4 text-3xl font-bold leading-tight md:text-4xl">
+                  Integration strategy and execution
+                </h3>
+                <p class="text-[1.08rem] leading-relaxed">
+                  I take complex requirements and translate them into clean,
+                  scalable solutions that move money reliably from end to end,
+                  with compliance and fraud prevention woven in from the start.
+                </p>
+              </article>
+              <article class="text-center">
+                <div class="mb-6 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="font-heading mb-4 text-3xl font-bold leading-tight md:text-4xl">
+                  Payment infrastructure and transaction flow
+                </h3>
+                <p class="text-[1.08rem] leading-relaxed">
+                  Deep fluency with APIs, gateways, and the systems that
+                  process transactions with precision, handling everything from
+                  ISO8583 to modern SDK integrations.
+                </p>
+              </article>
+              <article class="text-center">
+                <div class="mb-6 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <path d="M20 8v6"></path>
+                    <path d="M23 11h-6"></path>
+                  </svg>
+                </div>
+                <h3 class="font-heading mb-4 text-3xl font-bold leading-tight md:text-4xl">
+                  Cross-functional technical leadership
+                </h3>
+                <p class="text-[1.08rem] leading-relaxed">
+                  I guide teams through complexity with clarity and speed,
+                  turning domain knowledge into decisions that align strategy
+                  with execution.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="px-[5%] py-16 md:py-24">
+          <div class="mx-auto max-w-[1360px]">
+            <div class="mx-auto mb-16 max-w-[980px] text-center">
+              <p class="mb-4 text-sm font-semibold">Reach out</p>
+              <h2 class="font-heading mb-8 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
+                Start a conversation
+              </h2>
+              <p class="text-[1.08rem] leading-relaxed md:text-lg">
+                I'm available to discuss our payment strategy in detail, answer
+                any questions you may have, or simply say hello and connect.
+                I'm committed to getting back to you as soon as possible!
+              </p>
+            </div>
+            <div class="grid gap-12 md:grid-cols-3 md:gap-10">
+              <article class="text-center">
+                <div class="mb-5 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="currentColor" aria-hidden="true">
+                    <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-heading mb-4 text-3xl font-bold md:text-4xl">LinkedIn</h3>
+                <p class="mb-6 text-[1.08rem] leading-relaxed">
+                  The fastest way to connect with like-minded professionals and
+                  explore new opportunities together, all in one unified
+                  platform.
+                </p>
+                <a class="underline" href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer">/jhonattan-rivera</a>
+              </article>
+              <article class="text-center">
+                <div class="mb-5 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <h3 class="font-heading mb-4 text-3xl font-bold md:text-4xl">Email</h3>
+                <p class="mb-6 text-[1.08rem] leading-relaxed">
+                  Direct message us for specific inquiries, detailed project
+                  discussions, or to explore potential collaboration
+                  opportunities.
+                </p>
+                <a class="underline" href="mailto:hello@jhonattanrivera.com">hello@jhonattanrivera.com</a>
+              </article>
+              <article class="text-center">
+                <div class="mb-5 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.62 8.84 21.98C9.34 22.08 9.52 21.76 9.52 21.48C9.52 21.23 9.51 20.54 9.5 19.73C6.73 20.35 6.14 18.5 6.14 18.5C5.68 17.28 5.03 16.95 5.03 16.95C4.12 16.31 5.1 16.33 5.1 16.33C6.1 16.4 6.63 17.39 6.63 17.39C7.52 18.97 8.97 18.52 9.54 18.25C9.63 17.58 9.89 17.12 10.18 16.86C7.97 16.6 5.65 15.73 5.65 11.84C5.65 10.73 6.03 9.82 6.66 9.11C6.56 8.85 6.21 7.79 6.75 6.35C6.75 6.35 7.59 6.07 9.5 7.39C10.3 7.16 11.15 7.05 12 7.04C12.85 7.05 13.7 7.16 14.5 7.39C16.41 6.07 17.25 6.35 17.25 6.35C17.79 7.79 17.44 8.85 17.34 9.11C17.97 9.82 18.35 10.73 18.35 11.84C18.35 15.74 16.02 16.6 13.8 16.85C14.17 17.18 14.5 17.83 14.5 18.83C14.5 20.27 14.49 21.15 14.49 21.48C14.49 21.76 14.67 22.09 15.18 21.98C19.14 20.61 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-heading mb-4 text-3xl font-bold md:text-4xl">GitHub</h3>
+                <p class="mb-6 text-[1.08rem] leading-relaxed">
+                  Connect with us on GitHub to explore our codebase,
+                  contribute to our projects, or discuss technical
+                  implementations and integration opportunities.
+                </p>
+                <a class="underline" href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer">/jhonattanrivera</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <footer id="site-footer" class="bg-[#fdfdfd] px-[5%] py-12 md:py-16">
+          <div class="mx-auto max-w-[1260px]">
+            <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr]">
+              <a href="#top" class="justify-self-center lg:justify-self-start">
+                <img
+                  src="assets/images/logo-jr.png"
+                  alt="Jhonattan Rivera logo"
+                  class="h-12 w-12"
+                />
+              </a>
+              <nav class="flex flex-wrap items-center justify-center gap-8 text-sm font-semibold">
+              <a href="#top" class="hover:opacity-70">Home</a>
+              <a href="#foundation" class="hover:opacity-70">About</a>
+              <a href="#capabilities" class="hover:opacity-70">Approach</a>
+              <a href="#contact" class="hover:opacity-70">Contact</a>
+              </nav>
+              <div class="flex items-center justify-center gap-5 lg:justify-self-end">
+                <a href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="hover:opacity-70">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"></path></svg>
+                </a>
+                <a href="mailto:hello@jhonattanrivera.com" aria-label="Email" class="hover:opacity-70">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </a>
+                <a href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer" aria-label="GitHub" class="hover:opacity-70">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.62 8.84 21.98C9.34 22.08 9.52 21.76 9.52 21.48C9.52 21.23 9.51 20.54 9.5 19.73C6.73 20.35 6.14 18.5 6.14 18.5C5.68 17.28 5.03 16.95 5.03 16.95C4.12 16.31 5.1 16.33 5.1 16.33C6.1 16.4 6.63 17.39 6.63 17.39C7.52 18.97 8.97 18.52 9.54 18.25C9.63 17.58 9.89 17.12 10.18 16.86C7.97 16.6 5.65 15.73 5.65 11.84C5.65 10.73 6.03 9.82 6.66 9.11C6.56 8.85 6.21 7.79 6.75 6.35C6.75 6.35 7.59 6.07 9.5 7.39C10.3 7.16 11.15 7.05 12 7.04C12.85 7.05 13.7 7.16 14.5 7.39C16.41 6.07 17.25 6.35 17.25 6.35C17.79 7.79 17.44 8.85 17.34 9.11C17.97 9.82 18.35 10.73 18.35 11.84C18.35 15.74 16.02 16.6 13.8 16.85C14.17 17.18 14.5 17.83 14.5 18.83C14.5 20.27 14.49 21.15 14.49 21.48C14.49 21.76 14.67 22.09 15.18 21.98C19.14 20.61 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="mt-10 h-px w-full bg-neutral-300"></div>
+            <p class="pt-10 text-center text-sm">© 2025 Jhonattan Rivera. All rights reserved.</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener("click", function (event) {
+          var targetId = this.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+          var target = document.querySelector(targetId);
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", targetId);
+        });
+      });
+    </script>
+  </body>
+</html>

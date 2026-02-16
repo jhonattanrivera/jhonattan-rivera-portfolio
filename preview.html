@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio website for Jhonattan Rivera, Payments Expert."
+    />
+    <title>Jhonattan Rivera | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              page: "#e9e9e9",
+              darkpanel: "#020f0b",
+            },
+            fontFamily: {
+              sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-page text-neutral-900 antialiased">
+    <div class="mx-auto max-w-[1900px] p-2 md:p-3">
+      <main class="overflow-hidden rounded-xl border border-neutral-300/80">
+        <section id="site-nav" class="px-[5%] pt-4 md:pt-6">
+          <nav class="mx-auto flex w-full max-w-[1640px] items-center justify-between">
+            <a href="#hero" class="shrink-0">
+              <img
+                src="assets/images/logo-jr.png"
+                onerror="this.onerror=null;this.src='https://d22po4pjz3o32e.cloudfront.net/logo-image.svg';"
+                alt="Jhonattan Rivera logo"
+                class="h-10 w-10"
+              />
+            </a>
+            <div class="hidden items-center gap-10 text-base font-medium md:flex">
+              <a href="#hero" class="hover:opacity-70">About</a>
+              <a href="#foundation" class="hover:opacity-70">Approach</a>
+              <a href="#contact" class="hover:opacity-70">Connect</a>
+            </div>
+            <a
+              href="#contact"
+              class="inline-flex items-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-800"
+            >
+              Connect
+            </a>
+          </nav>
+        </section>
+
+        <section id="hero" class="px-[5%] py-14 md:py-20 lg:py-24">
+          <div class="mx-auto grid w-full max-w-[1260px] gap-10 lg:grid-cols-2 lg:items-center lg:gap-20">
+            <div>
+              <h1 class="mb-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
+                Jhonattan Rivera
+              </h1>
+              <p class="max-w-[640px] text-base leading-relaxed md:text-[2rem]">
+                Hello! 👋 I’m a Payments Expert with deep knowledge and hands-on
+                experience across the entire transaction flow, from gateways and
+                acquirers to issuers. My domain covers cards (Visa, Mastercard,
+                and other franchises), cash networks, and transfer methods. I
+                lead end-to-end project execution, aligning cross-functional
+                teams and managing client engagement. Technically fluent, I work
+                confidently with APIs, ISO8583, and SDK integrations, and I
+                bring a strong focus on fraud prevention.
+              </p>
+            </div>
+            <div>
+              <img
+                src="assets/images/hero-jr.png"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=1200&q=80';"
+                alt="Portrait of Jhonattan Rivera"
+                class="w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="foundation" class="px-[5%] py-16 md:py-24">
+          <div class="mx-auto max-w-[980px] text-center">
+            <p class="mb-4 text-sm font-semibold md:text-lg">Foundation</p>
+            <h2 class="mb-8 text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+              Expertise built on regulatory precision and execution
+            </h2>
+            <p class="mx-auto mb-10 max-w-[960px] text-lg leading-relaxed md:text-2xl">
+              I navigate the full payments ecosystem with deep technical
+              fluency, APIs, transaction flows, fraud prevention, while
+              maintaining strict compliance with PCI DSS and Latin American
+              regulatory frameworks. My work centers on turning operational
+              complexity into streamlined processes through continuous
+              improvement, strategic automation, and the kind of technical
+              leadership that scales reliably.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-5">
+              <img
+                src="assets/images/foundation-u.png"
+                onerror="this.onerror=null;this.src='https://dummyimage.com/64x64/000000/ffffff&text=U';"
+                alt="Foundation logo U"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+              <img
+                src="assets/images/foundation-kushki.png"
+                onerror="this.onerror=null;this.src='https://dummyimage.com/64x64/0a4cb9/ffffff&text=K';"
+                alt="Foundation logo Kushki"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+              <img
+                src="assets/images/foundation-nexi.png"
+                onerror="this.onerror=null;this.src='https://dummyimage.com/64x64/391040/ffffff&text=N';"
+                alt="Foundation logo Nexi"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+              <img
+                src="assets/images/foundation-a.png"
+                onerror="this.onerror=null;this.src='https://dummyimage.com/64x64/30165f/ffffff&text=A';"
+                alt="Foundation logo A"
+                class="h-16 w-16 rounded-sm object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="capabilities" class="bg-darkpanel px-[5%] py-16 text-white md:py-24">
+          <div class="mx-auto max-w-[1360px]">
+            <div class="mx-auto mb-16 max-w-[980px] text-center">
+              <p class="mb-4 text-sm font-semibold md:text-lg">Capabilities</p>
+              <h2 class="mb-8 text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+                What I bring to the table
+              </h2>
+              <p class="text-lg leading-relaxed md:text-2xl">
+                Interconnected disciplines refined through years of real
+                implementations and proven results. Each built on deep
+                technical expertise and unwavering strategic clarity, spanning
+                across the full spectrum of industry participants. Our approach
+                integrates practical experience with comprehensive industry
+                knowledge.
+              </p>
+            </div>
+            <div class="grid gap-12 md:grid-cols-3 md:gap-10">
+              <article class="text-center">
+                <div class="mb-6 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
+                  </svg>
+                </div>
+                <h3 class="mb-4 text-4xl font-bold leading-tight">
+                  Integration strategy and execution
+                </h3>
+                <p class="text-lg leading-relaxed">
+                  I take complex requirements and translate them into clean,
+                  scalable solutions that move money reliably from end to end,
+                  with compliance and fraud prevention woven in from the start.
+                </p>
+              </article>
+              <article class="text-center">
+                <div class="mb-6 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="mb-4 text-4xl font-bold leading-tight">
+                  Payment infrastructure and transaction flow
+                </h3>
+                <p class="text-lg leading-relaxed">
+                  Deep fluency with APIs, gateways, and the systems that
+                  process transactions with precision, handling everything from
+                  ISO8583 to modern SDK integrations.
+                </p>
+              </article>
+              <article class="text-center">
+                <div class="mb-6 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <path d="M20 8v6"></path>
+                    <path d="M23 11h-6"></path>
+                  </svg>
+                </div>
+                <h3 class="mb-4 text-4xl font-bold leading-tight">
+                  Cross-functional technical leadership
+                </h3>
+                <p class="text-lg leading-relaxed">
+                  I guide teams through complexity with clarity and speed,
+                  turning domain knowledge into decisions that align strategy
+                  with execution.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="px-[5%] py-16 md:py-24">
+          <div class="mx-auto max-w-[1360px]">
+            <div class="mx-auto mb-16 max-w-[980px] text-center">
+              <p class="mb-4 text-sm font-semibold md:text-lg">Reach out</p>
+              <h2 class="mb-8 text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
+                Start a conversation
+              </h2>
+              <p class="text-lg leading-relaxed md:text-2xl">
+                I'm available to discuss our payment strategy in detail, answer
+                any questions you may have, or simply say hello and connect.
+                I'm committed to getting back to you as soon as possible!
+              </p>
+            </div>
+            <div class="grid gap-12 md:grid-cols-3 md:gap-10">
+              <article class="text-center">
+                <div class="mb-5 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <h3 class="mb-4 text-5xl font-bold">LinkedIn</h3>
+                <p class="mb-6 text-lg leading-relaxed">
+                  The fastest way to connect with like-minded professionals and
+                  explore new opportunities together, all in one unified
+                  platform.
+                </p>
+                <a class="underline" href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer">/jhonattan-rivera</a>
+              </article>
+              <article class="text-center">
+                <div class="mb-5 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <h3 class="mb-4 text-5xl font-bold">Email</h3>
+                <p class="mb-6 text-lg leading-relaxed">
+                  Direct message us for specific inquiries, detailed project
+                  discussions, or to explore potential collaboration
+                  opportunities.
+                </p>
+                <a class="underline" href="mailto:hello@jhonattanrivera.com">hello@jhonattanrivera.com</a>
+              </article>
+              <article class="text-center">
+                <div class="mb-5 flex justify-center">
+                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="mb-4 text-5xl font-bold">GitHub</h3>
+                <p class="mb-6 text-lg leading-relaxed">
+                  Connect with us on GitHub to explore our codebase,
+                  contribute to our projects, or discuss technical
+                  implementations and integration opportunities.
+                </p>
+                <a class="underline" href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer">/jhonattanrivera</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <footer id="site-footer" class="px-[5%] py-12 md:py-16">
+          <div class="mx-auto max-w-[1260px]">
+            <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr]">
+              <a href="#hero" class="justify-self-center lg:justify-self-start">
+                <img
+                  src="assets/images/logo-jr.png"
+                  onerror="this.onerror=null;this.src='https://d22po4pjz3o32e.cloudfront.net/logo-image.svg';"
+                  alt="Jhonattan Rivera logo"
+                  class="h-12 w-12"
+                />
+              </a>
+              <nav class="flex flex-wrap items-center justify-center gap-8 text-lg font-semibold">
+                <a href="#hero" class="hover:opacity-70">Home</a>
+                <a href="#hero" class="hover:opacity-70">About</a>
+                <a href="#foundation" class="hover:opacity-70">Approach</a>
+                <a href="#contact" class="hover:opacity-70">Contact</a>
+              </nav>
+              <div class="flex items-center justify-center gap-5 lg:justify-self-end">
+                <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X" class="hover:opacity-70">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21l-6.56 7.498L22 22h-6.828l-5.347-6.988L3.84 22H1.08l7.016-8.018L2 2h7l4.833 6.35L18.244 2Zm-2.39 18h1.89L7.973 3.895H5.945L15.854 20Z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="hover:opacity-70">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"></path></svg>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" class="hover:opacity-70">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M10 15l5.19-3L10 9v6m11.56-7.17a2.5 2.5 0 0 0-1.76-1.77C18.22 5.5 12 5.5 12 5.5s-6.22 0-7.8.56a2.5 2.5 0 0 0-1.76 1.77A26.35 26.35 0 0 0 2 12a26.35 26.35 0 0 0 .44 4.17 2.5 2.5 0 0 0 1.76 1.77c1.58.56 7.8.56 7.8.56s6.22 0 7.8-.56a2.5 2.5 0 0 0 1.76-1.77c.29-1.38.44-2.77.44-4.17s-.15-2.79-.44-4.17Z"></path></svg>
+                </a>
+              </div>
+            </div>
+            <div class="mt-10 h-px w-full bg-neutral-300"></div>
+            <p class="pt-10 text-center text-lg">© 2025 Jhonattan Rivera. All rights reserved.</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
