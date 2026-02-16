@@ -295,12 +295,15 @@
               </div>
             </div>
             <div class="mt-10 h-px w-full bg-neutral-300"></div>
-            <p class="pt-10 text-center text-sm">© 2025 Jhonattan Rivera. All rights reserved.</p>
+            <p class="pt-10 text-center text-sm">© <span id="current-year"></span> Jhonattan Rivera. All rights reserved.</p>
           </div>
         </footer>
       </main>
     </div>
     <script>
+      var yearEl = document.getElementById("current-year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
       document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener("click", function (event) {
           var targetId = this.getAttribute("href");
