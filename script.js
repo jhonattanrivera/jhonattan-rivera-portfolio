@@ -117,21 +117,15 @@
     const heroP = Math.min(Math.max(y / (vh * 0.85), 0), 1);
 
     if (heroCardWrap) {
-      const ty = heroP * -60;
-      const scale = 1 - heroP * 0.04;
-      const blur = heroP * 4;
-      const op = 1 - heroP * 0.7;
-      heroCardWrap.style.transform = `translate3d(0, ${ty}px, 0) scale(${scale})`;
-      heroCardWrap.style.filter = `blur(${blur}px)`;
+      const ty = heroP * -40;
+      const op = 1 - heroP * 0.5;
+      heroCardWrap.style.transform = `translate3d(0, ${ty}px, 0)`;
       heroCardWrap.style.opacity = String(op);
     }
     if (heroAvatarStage) {
-      const ty = heroP * -90;
-      const scale = 1 - heroP * 0.06;
-      const blur = heroP * 4;
-      const op = 1 - heroP * 0.7;
-      heroAvatarStage.style.transform = `translate3d(0, ${ty}px, 0) scale(${scale})`;
-      heroAvatarStage.style.filter = `blur(${blur}px)`;
+      const ty = heroP * -60;
+      const op = 1 - heroP * 0.5;
+      heroAvatarStage.style.transform = `translate3d(0, ${ty}px, 0)`;
       heroAvatarStage.style.opacity = String(op);
     }
     if (scrollCue) {

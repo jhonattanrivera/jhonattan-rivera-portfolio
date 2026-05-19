@@ -684,18 +684,25 @@ section {
 }
 
 @media (max-width: 980px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero-avatar-wrap { max-width: 420px; margin: 0 auto; aspect-ratio: 1 / 1; }
-  .hero h1 { font-size: clamp(56px, 14vw, 96px); }
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-avatar-wrap { max-width: 360px; margin: 0 auto; aspect-ratio: 1 / 1; padding: 12px; }
+  .hero h1 { font-size: clamp(48px, 11vw, 84px); margin-bottom: 16px; }
   .scroll-cue { display: none; }
-  .hero { padding-top: 110px; min-height: auto; padding-bottom: 60px; }
+  .hero { padding-top: 90px; min-height: auto; padding-bottom: 40px; }
+  .hero-card { padding: 24px 22px; }
+  .hero-meta { margin-bottom: 18px; }
+  .lede { font-size: 17px; }
+  .hero-intro { max-width: none; }
+  .hero-tags { margin-top: 18px; gap: 6px; }
+  .hero-tag { font-size: 10px; padding: 5px 10px 5px 8px; }
 }
 
 @media (max-width: 720px) {
-  .hero-card { padding: 28px 24px; }
-  .hero h1 { font-size: clamp(56px, 16vw, 84px); }
-  .hero-floating-card { padding: 10px 14px; }
-  .hero-floating-card .value { font-size: 18px; }
+  .hero h1 { font-size: clamp(44px, 13vw, 64px); line-height: 0.98; }
+  .hero-floating-card { padding: 8px 12px; gap: 8px; }
+  .hero-floating-card .value { font-size: 16px; }
+  .hero-floating-card .swatch { width: 22px; height: 22px; border-radius: 6px; }
+  .hero-floating-card .swatch svg { width: 12px; height: 12px; }
 }
 
 /* =========================================================================
@@ -720,10 +727,9 @@ section {
 
 .foundation-logos {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 24px;
   padding: 22px;
   border-radius: 28px;
   max-width: 720px;
@@ -733,7 +739,6 @@ section {
 .foundation-logos-row {
   display: flex;
   gap: 14px;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
 }
@@ -756,27 +761,24 @@ section {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-3);
-  display: flex;
-  align-items: center;
-  padding: 0 14px 0 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
   .foundation-logos {
     flex-direction: column;
-    gap: 18px;
-    padding: 22px 14px;
-  }
-  .foundation-logos .logo-label {
-    padding: 0;
+    gap: 16px;
+    padding: 20px 14px;
   }
   .foundation-logos-row {
     gap: 10px;
     width: 100%;
+    justify-content: space-around;
   }
   .foundation-logos img {
-    width: clamp(48px, 14vw, 60px);
-    height: clamp(48px, 14vw, 60px);
+    width: clamp(46px, 13vw, 58px);
+    height: clamp(46px, 13vw, 58px);
   }
 }
 
