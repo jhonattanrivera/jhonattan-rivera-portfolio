@@ -1,325 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio website for Jhonattan Rivera, Payments Expert."
-    />
-    <title>Jhonattan Rivera</title>
-    <link rel="icon" type="image/png" href="assets/images/logo-jr.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              page: "#ffffff",
-              darkpanel: "#020f0b",
-            },
-            fontFamily: {
-              heading: ["Urbanist", "ui-sans-serif", "system-ui", "sans-serif"],
-              body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Urbanist:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      html {
-        scroll-behavior: smooth;
-        background: #ffffff;
-      }
-      body {
-        background: #ffffff;
-      }
-      .body-copy {
-        font-size: 1.08rem;
-        line-height: 1.6;
-      }
-    </style>
-  </head>
-  <body id="top" class="bg-page font-body text-neutral-900 antialiased">
-    <div class="mx-auto max-w-[1900px]">
-      <main class="overflow-hidden">
-        <section id="site-nav" class="bg-white px-[5%] pt-4 md:pt-6">
-          <nav class="mx-auto flex w-full max-w-[1640px] items-center justify-between">
-            <a href="#top" class="shrink-0">
-              <img
-                src="assets/images/logo-jr.png"
-                alt="Jhonattan Rivera logo"
-                class="h-10 w-10"
-              />
-            </a>
-            <div class="hidden items-center gap-10 text-sm font-medium md:flex">
-              <a href="#foundation" class="hover:opacity-70">About</a>
-              <a href="#capabilities" class="hover:opacity-70">Approach</a>
-            </div>
-            <a
-              href="#contact"
-              class="inline-flex items-center rounded-md bg-black px-4 py-2 text-xs font-medium text-white transition hover:bg-neutral-800"
-            >
-              Connect
-            </a>
-          </nav>
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jhonattan Rivera — Payments Expert</title>
+  <meta name="description" content="Portfolio of Jhonattan Rivera. Payments Expert across the full transaction flow: gateways, acquirers, issuers." />
+  <link rel="icon" type="image/png" href="assets/images/logo-jr.png" />
 
-        <section id="hero" class="bg-white px-[5%] py-14 md:py-20 lg:py-24">
-          <div class="mx-auto grid w-full max-w-[1260px] gap-10 lg:grid-cols-2 lg:items-center lg:gap-20">
-            <div>
-              <h1 class="font-heading mb-8 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-                Jhonattan Rivera
-              </h1>
-              <p class="body-copy max-w-[640px]">
-                Hello! 👋 I’m a Payments Expert with deep knowledge and hands-on
-                experience across the entire transaction flow, from gateways and
-                acquirers to issuers. My domain covers cards (Visa, Mastercard,
-                and other franchises), cash networks, and transfer methods. I
-                lead end-to-end project execution, aligning cross-functional
-                teams and managing client engagement. Technically fluent, I work
-                confidently with APIs, ISO8583, and SDK integrations, and I
-                bring a strong focus on fraud prevention.
-              </p>
-            </div>
-            <div>
-              <img
-                src="assets/images/hero-jr.png"
-                alt="Portrait of Jhonattan Rivera"
-                class="w-full rounded-lg object-cover"
-              />
-            </div>
-          </div>
-        </section>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-        <section id="foundation" class="px-[5%] py-16 md:py-24">
-          <div class="mx-auto max-w-[980px] text-center">
-            <p class="mb-4 text-sm font-semibold">Foundation</p>
-            <h2 class="font-heading mb-8 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
-              Expertise built on regulatory precision and execution
-            </h2>
-            <p class="body-copy mx-auto mb-10 max-w-[960px]">
-              I navigate the full payments ecosystem with deep technical
-              fluency, APIs, transaction flows, fraud prevention, while
-              maintaining strict compliance with PCI DSS and Latin American
-              regulatory frameworks. My work centers on turning operational
-              complexity into streamlined processes through continuous
-              improvement, strategic automation, and the kind of technical
-              leadership that scales reliably.
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-5">
-              <img
-                src="assets/images/foundation-1.jpeg"
-                alt="Foundation logo U"
-                class="h-16 w-16 rounded-sm object-cover"
-              />
-              <img
-                src="assets/images/foundation-2.jpeg"
-                alt="Foundation logo Kushki"
-                class="h-16 w-16 rounded-sm object-cover"
-              />
-              <img
-                src="assets/images/foundation-3.jpeg"
-                alt="Foundation logo Nexi"
-                class="h-16 w-16 rounded-sm object-cover"
-              />
-              <img
-                src="assets/images/foundation-4.jpeg"
-                alt="Foundation logo A"
-                class="h-16 w-16 rounded-sm object-cover"
-              />
-            </div>
-          </div>
-        </section>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
 
-        <section id="capabilities" class="bg-darkpanel px-[5%] py-16 text-white md:py-24">
-          <div class="mx-auto max-w-[1360px]">
-            <div class="mx-auto mb-16 max-w-[980px] text-center">
-              <p class="mb-4 text-sm font-semibold">Capabilities</p>
-              <h2 class="font-heading mb-8 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
-                What I bring to the table
-              </h2>
-              <p class="body-copy">
-                Interconnected disciplines refined through years of real
-                implementations and proven results. Each built on deep
-                technical expertise and unwavering strategic clarity, spanning
-                across the full spectrum of industry participants. Our approach
-                integrates practical experience with comprehensive industry
-                knowledge.
-              </p>
-            </div>
-            <div class="grid gap-12 md:grid-cols-3 md:gap-10">
-              <article class="text-center">
-                <div class="mb-6 flex justify-center">
-                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
-                  </svg>
-                </div>
-                <h3 class="font-heading mb-4 text-3xl font-bold leading-tight md:text-4xl">
-                  Integration strategy and execution
-                </h3>
-                <p class="body-copy">
-                  I take complex requirements and translate them into clean,
-                  scalable solutions that move money reliably from end to end,
-                  with compliance and fraud prevention woven in from the start.
-                </p>
-              </article>
-              <article class="text-center">
-                <div class="mb-6 flex justify-center">
-                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                </div>
-                <h3 class="font-heading mb-4 text-3xl font-bold leading-tight md:text-4xl">
-                  Payment infrastructure and transaction flow
-                </h3>
-                <p class="body-copy">
-                  Deep fluency with APIs, gateways, and the systems that
-                  process transactions with precision, handling everything from
-                  ISO8583 to modern SDK integrations.
-                </p>
-              </article>
-              <article class="text-center">
-                <div class="mb-6 flex justify-center">
-                  <svg viewBox="0 0 24 24" class="h-10 w-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="8.5" cy="7" r="4"></circle>
-                    <path d="M20 8v6"></path>
-                    <path d="M23 11h-6"></path>
-                  </svg>
-                </div>
-                <h3 class="font-heading mb-4 text-3xl font-bold leading-tight md:text-4xl">
-                  Cross-functional technical leadership
-                </h3>
-                <p class="body-copy">
-                  I guide teams through complexity with clarity and speed,
-                  turning domain knowledge into decisions that align strategy
-                  with execution.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
+  <!-- Animated mesh + grain backdrop -->
+  <div class="mesh" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-        <section id="contact" class="px-[5%] py-16 md:py-24">
-          <div class="mx-auto max-w-[1360px]">
-            <div class="mx-auto mb-16 max-w-[980px] text-center">
-              <p class="mb-4 text-sm font-semibold">Contact</p>
-              <h2 class="font-heading mb-8 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
-                Find me online
-              </h2>
-              <p class="body-copy">
-                These are the official channels where I keep my professional
-                presence and public work. This site is a portfolio snapshot,
-                not a consulting intake. If you need a formal or administrative
-                contact, email is the right place.
-              </p>
-            </div>
-            <div class="grid gap-12 md:grid-cols-3 md:gap-10">
-              <article class="text-center">
-                <div class="mb-5 flex justify-center">
-                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="currentColor" aria-hidden="true">
-                    <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"></path>
-                  </svg>
-                </div>
-                <h3 class="font-heading mb-4 text-3xl font-bold md:text-4xl">LinkedIn</h3>
-                <p class="body-copy mb-6">
-                  Career timeline, roles, and credentials in one place, with a
-                  concise overview of responsibilities and scope.
-                </p>
-                <a class="underline" href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer">/jhonattan-rivera</a>
-              </article>
-              <article class="text-center">
-                <div class="mb-5 flex justify-center">
-                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"></path>
-                  </svg>
-                </div>
-                <h3 class="font-heading mb-4 text-3xl font-bold md:text-4xl">Email</h3>
-                <p class="body-copy mb-6">
-                  For formal or administrative messages and document requests,
-                  with responses provided when applicable.
-                </p>
-                <a class="underline" href="mailto:hello@jhonattanrivera.com">hello@jhonattanrivera.com</a>
-              </article>
-              <article class="text-center">
-                <div class="mb-5 flex justify-center">
-                  <svg viewBox="0 0 24 24" class="h-12 w-12" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.62 8.84 21.98C9.34 22.08 9.52 21.76 9.52 21.48C9.52 21.23 9.51 20.54 9.5 19.73C6.73 20.35 6.14 18.5 6.14 18.5C5.68 17.28 5.03 16.95 5.03 16.95C4.12 16.31 5.1 16.33 5.1 16.33C6.1 16.4 6.63 17.39 6.63 17.39C7.52 18.97 8.97 18.52 9.54 18.25C9.63 17.58 9.89 17.12 10.18 16.86C7.97 16.6 5.65 15.73 5.65 11.84C5.65 10.73 6.03 9.82 6.66 9.11C6.56 8.85 6.21 7.79 6.75 6.35C6.75 6.35 7.59 6.07 9.5 7.39C10.3 7.16 11.15 7.05 12 7.04C12.85 7.05 13.7 7.16 14.5 7.39C16.41 6.07 17.25 6.35 17.25 6.35C17.79 7.79 17.44 8.85 17.34 9.11C17.97 9.82 18.35 10.73 18.35 11.84C18.35 15.74 16.02 16.6 13.8 16.85C14.17 17.18 14.5 17.83 14.5 18.83C14.5 20.27 14.49 21.15 14.49 21.48C14.49 21.76 14.67 22.09 15.18 21.98C19.14 20.61 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"></path>
-                  </svg>
-                </div>
-                <h3 class="font-heading mb-4 text-3xl font-bold md:text-4xl">GitHub</h3>
-                <p class="body-copy mb-6">
-                  Public repositories, code samples, and technical experiments,
-                  with a view into implementation quality and style.
-                </p>
-                <a class="underline" href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer">/jhonattanrivera</a>
-              </article>
-            </div>
-          </div>
-        </section>
+  <!-- ============ NAV ============ -->
+  <div class="nav-wrap">
+    <nav class="nav glass glass-pill" aria-label="Primary">
+      <div class="nav-logo">
+        <img src="assets/images/logo-jr.png" alt="JR logo" />
+        <span class="nav-logo-text">Jhonattan <em>Rivera</em></span>
+      </div>
+      <div class="nav-links">
+        <a href="#foundation" data-en="About" data-es="Sobre mí">About</a>
+        <a href="#capabilities" data-en="Approach" data-es="Enfoque">Approach</a>
+        <a href="#stack" data-en="Stack" data-es="Stack">Stack</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="true">EN</button>
+        <button data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a href="#contact" class="cta">
+        <span class="dot"></span>
+        <span data-en="Connect" data-es="Conectar">Connect</span>
+      </a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
 
-        <footer id="site-footer" class="bg-white px-[5%] py-12 md:py-16">
-          <div class="mx-auto max-w-[1260px]">
-            <div class="grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr]">
-              <a href="#top" class="justify-self-center lg:justify-self-start">
-                <img
-                  src="assets/images/logo-jr.png"
-                  alt="Jhonattan Rivera logo"
-                  class="h-12 w-12"
-                />
-              </a>
-              <nav class="flex flex-wrap items-center justify-center gap-8 text-sm font-semibold">
-              <a href="#top" class="hover:opacity-70">Home</a>
-              <a href="#foundation" class="hover:opacity-70">About</a>
-              <a href="#capabilities" class="hover:opacity-70">Approach</a>
-              <a href="#contact" class="hover:opacity-70">Contact</a>
-              </nav>
-              <div class="flex items-center justify-center gap-5 lg:justify-self-end">
-                <a href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="hover:opacity-70">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"></path></svg>
-                </a>
-                <a href="mailto:hello@jhonattanrivera.com" aria-label="Email" class="hover:opacity-70">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"></path>
-                  </svg>
-                </a>
-                <a href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer" aria-label="GitHub" class="hover:opacity-70">
-                  <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.62 8.84 21.98C9.34 22.08 9.52 21.76 9.52 21.48C9.52 21.23 9.51 20.54 9.5 19.73C6.73 20.35 6.14 18.5 6.14 18.5C5.68 17.28 5.03 16.95 5.03 16.95C4.12 16.31 5.1 16.33 5.1 16.33C6.1 16.4 6.63 17.39 6.63 17.39C7.52 18.97 8.97 18.52 9.54 18.25C9.63 17.58 9.89 17.12 10.18 16.86C7.97 16.6 5.65 15.73 5.65 11.84C5.65 10.73 6.03 9.82 6.66 9.11C6.56 8.85 6.21 7.79 6.75 6.35C6.75 6.35 7.59 6.07 9.5 7.39C10.3 7.16 11.15 7.05 12 7.04C12.85 7.05 13.7 7.16 14.5 7.39C16.41 6.07 17.25 6.35 17.25 6.35C17.79 7.79 17.44 8.85 17.34 9.11C17.97 9.82 18.35 10.73 18.35 11.84C18.35 15.74 16.02 16.6 13.8 16.85C14.17 17.18 14.5 17.83 14.5 18.83C14.5 20.27 14.49 21.15 14.49 21.48C14.49 21.76 14.67 22.09 15.18 21.98C19.14 20.61 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="mt-10 h-px w-full bg-neutral-300"></div>
-            <p class="pt-10 text-center text-sm">© <span id="current-year"></span> Jhonattan Rivera. All rights reserved.</p>
-          </div>
-        </footer>
-      </main>
+  <!-- Mobile sheet -->
+  <div class="mobile-sheet glass" aria-hidden="true">
+    <a href="#foundation" data-en="About" data-es="Sobre mí">About</a>
+    <a href="#capabilities" data-en="Approach" data-es="Enfoque">Approach</a>
+    <a href="#stack" data-en="Stack" data-es="Stack">Stack</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    <div class="lang-row">
+      <span style="font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3);" data-en="Language" data-es="Idioma">Language</span>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="true">EN</button>
+        <button data-lang="es" aria-pressed="false">ES</button>
+      </div>
     </div>
-    <script>
-      var yearEl = document.getElementById("current-year");
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </div>
 
-      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener("click", function (event) {
-          var targetId = this.getAttribute("href");
-          if (!targetId || targetId === "#") return;
-          var target = document.querySelector(targetId);
-          if (!target) return;
-          event.preventDefault();
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-          history.replaceState(null, "", targetId);
-        });
-      });
-    </script>
-  </body>
+  <!-- ============ HERO ============ -->
+  <section class="hero shell" id="hero-section">
+    <div class="hero-grid">
+
+      <div class="hero-card-wrap">
+        <div class="hero-card glass reveal">
+          <div class="hero-meta">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="eyebrow" data-en="Available · Bogotá, Colombia" data-es="Disponible · Bogotá, Colombia">Available · Bogotá, Colombia</span>
+          </div>
+          <h1 class="display">
+            Jhonattan
+            <em>Rivera</em>
+          </h1>
+          <p class="lede hero-intro" data-en="Payments expert across the full transaction flow — gateways, acquirers and issuers. I turn regulatory and integration complexity into reliable, compliant software." data-es="Experto en pagos en todo el flujo transaccional — gateways, adquirentes y emisores. Convierto la complejidad regulatoria y de integración en software confiable y conforme.">
+            Payments expert across the full transaction flow — gateways, acquirers and issuers. I turn regulatory and integration complexity into reliable, compliant software.
+          </p>
+          <div class="hero-tags">
+            <span class="hero-tag">ISO 8583</span>
+            <span class="hero-tag">PCI DSS</span>
+            <span class="hero-tag">Visa · Mastercard</span>
+            <span class="hero-tag">3DS</span>
+            <span class="hero-tag">LATAM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-avatar-stage">
+        <div class="hero-avatar-wrap glass reveal" data-delay="1">
+          <img src="assets/images/hero-jr.png" alt="Illustrated portrait of Jhonattan Rivera" />
+
+          <div class="hero-floating-card years glass">
+            <div class="swatch" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M2 12h20"/>
+              </svg>
+            </div>
+            <div>
+              <div class="label" data-en="In payments" data-es="En pagos">In payments</div>
+              <div class="value">5+ <span style="font-family: var(--f-sans); font-size: 13px; color: var(--ink-3);" data-en="years" data-es="años">years</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span data-en="Scroll" data-es="Desliza">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDATION ============ -->
+  <section class="foundation shell-narrow" id="foundation" data-screen-label="Foundation">
+    <p class="eyebrow reveal" data-en="Foundation" data-es="Fundamento">Foundation</p>
+    <h2 class="display reveal" data-delay="1"
+        data-en="Expertise built on <em>regulatory precision</em> and execution."
+        data-es="Experiencia construida sobre <em>precisión regulatoria</em> y ejecución.">
+      Expertise built on <em>regulatory precision</em> and execution.
+    </h2>
+    <p class="lede reveal" data-delay="2"
+       data-en="I navigate the full payments ecosystem with deep technical fluency — APIs, transaction flows, fraud prevention — while staying strict on PCI DSS and Latin-American regulatory frameworks. My work turns operational complexity into streamlined processes through continuous improvement, automation and technical leadership that scales."
+       data-es="Navego el ecosistema de pagos con fluidez técnica — APIs, flujos transaccionales, prevención de fraude — manteniendo cumplimiento estricto con PCI DSS y marcos regulatorios latinoamericanos. Mi trabajo convierte la complejidad operativa en procesos optimizados a través de mejora continua, automatización y liderazgo técnico que escala.">
+      I navigate the full payments ecosystem with deep technical fluency — APIs, transaction flows, fraud prevention — while staying strict on PCI DSS and Latin-American regulatory frameworks. My work turns operational complexity into streamlined processes through continuous improvement, automation and technical leadership that scales.
+    </p>
+
+    <div class="foundation-logos glass reveal" data-delay="3">
+      <span class="logo-label" data-en="Trusted across" data-es="Experiencia en">Trusted across</span>
+      <a href="https://corporate.payu.com/colombia/es/" target="_blank" rel="noreferrer" aria-label="PayU"><img src="assets/images/foundation-1.jpeg" alt="PayU" /></a>
+      <a href="https://www.kushkipagos.com" target="_blank" rel="noreferrer" aria-label="Kushki"><img src="assets/images/foundation-2.jpeg" alt="Kushki" /></a>
+      <a href="https://pomelo.la/en" target="_blank" rel="noreferrer" aria-label="Pomelo"><img src="assets/images/foundation-3.jpeg" alt="Pomelo" /></a>
+      <a href="https://akua.la/en" target="_blank" rel="noreferrer" aria-label="Akua"><img src="assets/images/foundation-4.jpeg" alt="Akua" /></a>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="capabilities shell" id="capabilities" data-screen-label="Capabilities">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-en="Capabilities" data-es="Capacidades">Capabilities</p>
+      <h2 class="display reveal" data-delay="1"
+          data-en="What I <em>bring to the table</em>."
+          data-es="Lo que <em>aporto</em>.">
+        What I <em>bring to the table</em>.
+      </h2>
+      <p class="body-large reveal" data-delay="2"
+         data-en="Interconnected disciplines refined through years of real implementations and proven results, built on deep technical expertise and strategic clarity."
+         data-es="Disciplinas interconectadas refinadas con años de implementaciones reales y resultados comprobados, construidas sobre experiencia técnica profunda y claridad estratégica.">
+        Interconnected disciplines refined through years of real implementations and proven results, built on deep technical expertise and strategic clarity.
+      </p>
+    </div>
+
+    <div class="cap-grid">
+      <article class="cap-card glass reveal">
+        <div class="cap-num">
+          <span class="n">01</span>
+          <span class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+            </svg>
+          </span>
+        </div>
+        <h3 data-en="Integration strategy & execution" data-es="Estrategia y ejecución de integración">Integration strategy &amp; execution</h3>
+        <p data-en="Complex requirements translated into clean, scalable solutions that move money reliably end-to-end — with compliance and fraud prevention woven in from day one."
+           data-es="Requisitos complejos traducidos en soluciones limpias y escalables que mueven dinero de forma confiable de extremo a extremo — con cumplimiento y prevención de fraude desde el día uno.">
+          Complex requirements translated into clean, scalable solutions that move money reliably end-to-end — with compliance and fraud prevention woven in from day one.
+        </p>
+        <span class="ribbon" data-en="API · Webhooks · SDKs" data-es="API · Webhooks · SDKs">API · Webhooks · SDKs</span>
+      </article>
+
+      <article class="cap-card glass reveal" data-delay="1">
+        <div class="cap-num">
+          <span class="n">02</span>
+          <span class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </span>
+        </div>
+        <h3 data-en="Payment infrastructure & transaction flow" data-es="Infraestructura de pagos y flujo transaccional">Payment infrastructure &amp; transaction flow</h3>
+        <p data-en="Deep fluency with gateways, processors and the rails that move transactions — from ISO 8583 logs to modern SDKs, card-present, e-commerce and alternative payment methods."
+           data-es="Fluidez profunda con gateways, procesadores y los rieles que mueven transacciones — desde logs ISO 8583 a SDKs modernos, presencial, e-commerce y métodos alternativos de pago.">
+          Deep fluency with gateways, processors and the rails that move transactions — from ISO 8583 logs to modern SDKs, card-present, e-commerce and alternative payment methods.
+        </p>
+        <span class="ribbon" data-en="ISO 8583 · 3DS · Tap-to-Phone" data-es="ISO 8583 · 3DS · Tap-to-Phone">ISO 8583 · 3DS · Tap-to-Phone</span>
+      </article>
+
+      <article class="cap-card glass reveal" data-delay="2">
+        <div class="cap-num">
+          <span class="n">03</span>
+          <span class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <path d="M20 8v6M23 11h-6"/>
+            </svg>
+          </span>
+        </div>
+        <h3 data-en="Cross-functional technical leadership" data-es="Liderazgo técnico cross-funcional">Cross-functional technical leadership</h3>
+        <p data-en="Teams guided through complexity with clarity and speed — turning domain knowledge into decisions that align strategy with execution across product, eng, compliance and CX."
+           data-es="Equipos guiados a través de la complejidad con claridad y velocidad — convirtiendo conocimiento de dominio en decisiones que alinean estrategia con ejecución a través de producto, ingeniería, cumplimiento y CX.">
+          Teams guided through complexity with clarity and speed — turning domain knowledge into decisions that align strategy with execution across product, eng, compliance and CX.
+        </p>
+        <span class="ribbon" data-en="Discovery · Playbooks · Go-lives" data-es="Discovery · Playbooks · Go-lives">Discovery · Playbooks · Go-lives</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ STACK ============ -->
+  <section class="stack shell" id="stack" data-screen-label="Stack">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-en="Stack & toolbox" data-es="Stack y herramientas">Stack &amp; toolbox</p>
+      <h2 class="display reveal" data-delay="1"
+          data-en="The <em>vocabulary</em> I work in."
+          data-es="El <em>vocabulario</em> en el que trabajo.">
+        The <em>vocabulary</em> I work in.
+      </h2>
+      <p class="body-large reveal" data-delay="2"
+         data-en="Standards, networks and tooling I touch on a weekly basis."
+         data-es="Estándares, redes y herramientas que toco cada semana.">
+        Standards, networks and tooling I touch on a weekly basis.
+      </p>
+    </div>
+
+    <div class="stack-groups">
+      <div class="stack-group glass reveal">
+        <div class="g-label" data-en="Networks & franchises" data-es="Redes y franquicias">Networks &amp; franchises</div>
+        <div class="stack-chips">
+          <span class="chip accent"><span class="chip-dot"></span>Visa</span>
+          <span class="chip accent"><span class="chip-dot"></span>Mastercard</span>
+          <span class="chip"><span class="chip-dot"></span>American Express</span>
+          <span class="chip"><span class="chip-dot"></span>Diners</span>
+          <span class="chip"><span class="chip-dot"></span>Cash networks</span>
+          <span class="chip"><span class="chip-dot"></span>Local rails</span>
+        </div>
+      </div>
+
+      <div class="stack-group glass reveal" data-delay="1">
+        <div class="g-label" data-en="Standards & protocols" data-es="Estándares y protocolos">Standards &amp; protocols</div>
+        <div class="stack-chips">
+          <span class="chip accent"><span class="chip-dot"></span>ISO 8583</span>
+          <span class="chip accent"><span class="chip-dot"></span>PCI DSS</span>
+          <span class="chip"><span class="chip-dot"></span>3-D Secure</span>
+          <span class="chip"><span class="chip-dot"></span>EMV</span>
+          <span class="chip"><span class="chip-dot"></span>Webhooks</span>
+          <span class="chip"><span class="chip-dot"></span>OAuth 2</span>
+        </div>
+      </div>
+
+      <div class="stack-group glass reveal" data-delay="2">
+        <div class="g-label" data-en="Channels & products" data-es="Canales y productos">Channels &amp; products</div>
+        <div class="stack-chips">
+          <span class="chip"><span class="chip-dot"></span>E-commerce</span>
+          <span class="chip"><span class="chip-dot"></span>Card-present</span>
+          <span class="chip"><span class="chip-dot"></span>Tap-to-Phone</span>
+          <span class="chip"><span class="chip-dot"></span>POS</span>
+          <span class="chip"><span class="chip-dot"></span>Issuing</span>
+          <span class="chip"><span class="chip-dot"></span>Acquiring</span>
+          <span class="chip"><span class="chip-dot"></span>APMs</span>
+        </div>
+      </div>
+
+      <div class="stack-group glass reveal" data-delay="3">
+        <div class="g-label" data-en="Practice" data-es="Práctica">Practice</div>
+        <div class="stack-chips">
+          <span class="chip"><span class="chip-dot"></span>Integration playbooks</span>
+          <span class="chip"><span class="chip-dot"></span>Pre-sales engineering</span>
+          <span class="chip"><span class="chip-dot"></span>Fraud prevention</span>
+          <span class="chip"><span class="chip-dot"></span>SQL & BI</span>
+          <span class="chip"><span class="chip-dot"></span>Salesforce</span>
+          <span class="chip"><span class="chip-dot"></span>AWS</span>
+          <span class="chip"><span class="chip-dot"></span>AI-driven automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact shell" id="contact" data-screen-label="Contact">
+    <div class="section-head">
+      <p class="eyebrow reveal" data-en="Contact" data-es="Contacto">Contact</p>
+      <h2 class="display reveal" data-delay="1"
+          data-en="Find me <em>online</em>."
+          data-es="Encuéntrame <em>en línea</em>.">
+        Find me <em>online</em>.
+      </h2>
+      <p class="body-large reveal" data-delay="2"
+         data-en="The official channels where I keep my professional presence and public work. This site is a portfolio snapshot, not a consulting intake — for formal messages, email is the right place."
+         data-es="Los canales oficiales donde mantengo mi presencia profesional y trabajo público. Este sitio es una instantánea de portafolio, no un canal de intake — para mensajes formales, el correo es el lugar correcto.">
+        The official channels where I keep my professional presence and public work. This site is a portfolio snapshot, not a consulting intake — for formal messages, email is the right place.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <article class="contact-card glass reveal">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"/></svg>
+        </div>
+        <h3>LinkedIn</h3>
+        <p data-en="Career timeline, roles and credentials in one place, with a concise overview of responsibilities and scope."
+           data-es="Trayectoria, roles y credenciales en un solo lugar, con una vista concisa de responsabilidades y alcance.">
+          Career timeline, roles and credentials in one place, with a concise overview of responsibilities and scope.
+        </p>
+        <a class="contact-link" href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer">
+          /jhonattan-rivera <span class="arrow">↗</span>
+        </a>
+      </article>
+
+      <article class="contact-card glass reveal" data-delay="1">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3 data-en="Email" data-es="Correo">Email</h3>
+        <p data-en="For formal or administrative messages and document requests, with responses provided when applicable."
+           data-es="Para mensajes formales o administrativos y solicitudes de documentos, con respuesta cuando aplique.">
+          For formal or administrative messages and document requests, with responses provided when applicable.
+        </p>
+        <a class="contact-link" href="mailto:hello@jhonattanrivera.com">
+          hello@jhonattanrivera.com <span class="arrow">↗</span>
+        </a>
+      </article>
+
+      <article class="contact-card glass reveal" data-delay="2">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.62 8.84 21.98C9.34 22.08 9.52 21.76 9.52 21.48C9.52 21.23 9.51 20.54 9.5 19.73C6.73 20.35 6.14 18.5 6.14 18.5C5.68 17.28 5.03 16.95 5.03 16.95C4.12 16.31 5.1 16.33 5.1 16.33C6.1 16.4 6.63 17.39 6.63 17.39C7.52 18.97 8.97 18.52 9.54 18.25C9.63 17.58 9.89 17.12 10.18 16.86C7.97 16.6 5.65 15.73 5.65 11.84C5.65 10.73 6.03 9.82 6.66 9.11C6.56 8.85 6.21 7.79 6.75 6.35C6.75 6.35 7.59 6.07 9.5 7.39C10.3 7.16 11.15 7.05 12 7.04C12.85 7.05 13.7 7.16 14.5 7.39C16.41 6.07 17.25 6.35 17.25 6.35C17.79 7.79 17.44 8.85 17.34 9.11C17.97 9.82 18.35 10.73 18.35 11.84C18.35 15.74 16.02 16.6 13.8 16.85C14.17 17.18 14.5 17.83 14.5 18.83C14.5 20.27 14.49 21.15 14.49 21.48C14.49 21.76 14.67 22.09 15.18 21.98C19.14 20.61 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </div>
+        <h3>GitHub</h3>
+        <p data-en="Public repositories, code samples and technical experiments — a view into implementation quality and style."
+           data-es="Repositorios públicos, ejemplos de código y experimentos técnicos — una vista de calidad y estilo de implementación.">
+          Public repositories, code samples and technical experiments — a view into implementation quality and style.
+        </p>
+        <a class="contact-link" href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer">
+          /jhonattanrivera <span class="arrow">↗</span>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer shell">
+    <div class="footer-row">
+      <a href="#top" class="footer-logo">
+        <img src="assets/images/logo-jr.png" alt="JR logo" />
+        <span class="footer-logo-text">Jhonattan <em>Rivera</em></span>
+      </a>
+      <nav class="footer-links">
+        <a href="#top" data-en="Home" data-es="Inicio">Home</a>
+        <a href="#foundation" data-en="About" data-es="Sobre mí">About</a>
+        <a href="#capabilities" data-en="Approach" data-es="Enfoque">Approach</a>
+        <a href="#stack" data-en="Stack" data-es="Stack">Stack</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/jhonattan-rivera" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2C18.5 10.55 16.95 9.3 14.95 9.3C13.36 9.3 12.66 10.18 12.26 10.8V9.5H9.5V18.5H12.26V13.6C12.26 12.31 12.5 11.06 14.1 11.06C15.67 11.06 15.69 12.53 15.69 13.68V18.5H18.5M6.31 8.27A1.6 1.6 0 0 0 7.91 6.67A1.6 1.6 0 0 0 6.31 5.07A1.6 1.6 0 0 0 4.71 6.67A1.6 1.6 0 0 0 6.31 8.27M7.69 18.5V9.5H4.94V18.5H7.69Z"/></svg>
+        </a>
+        <a href="mailto:hello@jhonattanrivera.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+        <a href="https://github.com/jhonattanrivera" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.62 8.84 21.98C9.34 22.08 9.52 21.76 9.52 21.48C9.52 21.23 9.51 20.54 9.5 19.73C6.73 20.35 6.14 18.5 6.14 18.5C5.68 17.28 5.03 16.95 5.03 16.95C4.12 16.31 5.1 16.33 5.1 16.33C6.1 16.4 6.63 17.39 6.63 17.39C7.52 18.97 8.97 18.52 9.54 18.25C9.63 17.58 9.89 17.12 10.18 16.86C7.97 16.6 5.65 15.73 5.65 11.84C5.65 10.73 6.03 9.82 6.66 9.11C6.56 8.85 6.21 7.79 6.75 6.35C6.75 6.35 7.59 6.07 9.5 7.39C10.3 7.16 11.15 7.05 12 7.04C12.85 7.05 13.7 7.16 14.5 7.39C16.41 6.07 17.25 6.35 17.25 6.35C17.79 7.79 17.44 8.85 17.34 9.11C17.97 9.82 18.35 10.73 18.35 11.84C18.35 15.74 16.02 16.6 13.8 16.85C14.17 17.18 14.5 17.83 14.5 18.83C14.5 20.27 14.49 21.15 14.49 21.48C14.49 21.76 14.67 22.09 15.18 21.98C19.14 20.61 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Jhonattan Rivera · <span data-en="All rights reserved" data-es="Todos los derechos reservados">All rights reserved</span></p>
+  </footer>
+
+  <!-- ============ TWEAKS ============ -->
+  <button class="tweaks-toggle glass glass-pill" id="tweaks-toggle">
+    <span class="dot"></span>
+    <span>Tweaks</span>
+  </button>
+
+  <aside class="tweaks-panel glass" id="tweaks-panel" aria-hidden="true">
+    <h4>
+      Tweaks
+      <button aria-label="Close" id="tweaks-close">×</button>
+    </h4>
+
+    <div class="tweak-row">
+      <div class="label">
+        <span data-en="Glass blur" data-es="Desenfoque del cristal">Glass blur</span>
+        <span id="blur-val">28px</span>
+      </div>
+      <input type="range" id="blur-slider" min="8" max="60" step="2" value="28" />
+    </div>
+
+    <div class="tweak-row">
+      <div class="label">
+        <span data-en="Glass opacity" data-es="Opacidad del cristal">Glass opacity</span>
+        <span id="opacity-val">36%</span>
+      </div>
+      <input type="range" id="opacity-slider" min="15" max="80" step="1" value="36" />
+    </div>
+
+    <div class="tweak-row">
+      <div class="label" style="margin-bottom: 4px;">
+        <span data-en="Mesh palette" data-es="Paleta del fondo">Mesh palette</span>
+      </div>
+      <div class="swatches" id="palette-swatches">
+        <button class="swatch" data-palette="warm" aria-pressed="true" style="background: linear-gradient(135deg, #ffd55e, #f5d6c3, #d8cff2);"></button>
+        <button class="swatch" data-palette="mint" aria-pressed="false" style="background: linear-gradient(135deg, #ffe8a3, #c8e4d6, #c9d8f0);"></button>
+        <button class="swatch" data-palette="dawn" aria-pressed="false" style="background: linear-gradient(135deg, #ffd1a8, #f7c1d1, #d8d0f0);"></button>
+        <button class="swatch" data-palette="mono" aria-pressed="false" style="background: linear-gradient(135deg, #f4f1ea, #e8e3d6, #ddd6c5);"></button>
+      </div>
+    </div>
+
+    <div class="tweak-row" style="flex-direction: row; align-items: center; justify-content: space-between;">
+      <span class="label" style="flex: 1;" data-en="Show stack section" data-es="Mostrar sección stack">Show stack section</span>
+      <div class="toggle" id="stack-toggle" role="button" aria-pressed="true" tabindex="0"></div>
+    </div>
+
+    <div class="tweak-row" style="flex-direction: row; align-items: center; justify-content: space-between;">
+      <span class="label" style="flex: 1;" data-en="Animate mesh" data-es="Animar fondo">Animate mesh</span>
+      <div class="toggle" id="motion-toggle" role="button" aria-pressed="true" tabindex="0"></div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
 </html>
