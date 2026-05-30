@@ -117,7 +117,7 @@
   </section>
 
   <!-- ============ FOUNDATION ============ -->
-  <section class="foundation shell-narrow" id="foundation" data-screen-label="Foundation">
+  <section class="foundation shell-narrow scroll-stage" id="foundation" data-screen-label="Foundation">
     <p class="eyebrow reveal" data-en="Foundation" data-es="Fundamento">Foundation</p>
     <h2 class="display reveal" data-delay="1"
         data-en="Expertise built on <em>regulatory precision</em> and execution."
@@ -142,7 +142,7 @@
   </section>
 
   <!-- ============ CAPABILITIES ============ -->
-  <section class="capabilities shell" id="capabilities" data-screen-label="Capabilities">
+  <section class="capabilities shell scroll-stage" id="capabilities" data-screen-label="Capabilities">
     <div class="section-head">
       <p class="eyebrow reveal" data-en="Capabilities" data-es="Capacidades">Capabilities</p>
       <h2 class="display reveal" data-delay="1"
@@ -215,7 +215,7 @@
   </section>
 
   <!-- ============ STACK ============ -->
-  <section class="stack shell" id="stack" data-screen-label="Stack">
+  <section class="stack shell scroll-stage" id="stack" data-screen-label="Stack">
     <div class="section-head">
       <p class="eyebrow reveal" data-en="Stack & toolbox" data-es="Stack y herramientas">Stack &amp; toolbox</p>
       <h2 class="display reveal" data-delay="1"
@@ -230,61 +230,109 @@
       </p>
     </div>
 
+    <!-- Payment transaction flow -->
+    <div class="payment-flow glass reveal" data-delay="3">
+      <div class="payment-flow-label" data-en="A transaction, end to end" data-es="Una transacción, de extremo a extremo">A transaction, end to end</div>
+      <div class="flow-track">
+        <div class="flow-node">
+          <span class="flow-num">01</span>
+          <span class="flow-name" data-en="Customer" data-es="Cliente">Customer</span>
+          <span class="flow-role" data-en="Card · wallet · QR" data-es="Tarjeta · billetera · QR">Card · wallet · QR</span>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="flow-node">
+          <span class="flow-num">02</span>
+          <span class="flow-name" data-en="Gateway" data-es="Gateway">Gateway</span>
+          <span class="flow-role" data-en="Captures · tokenizes · routes" data-es="Captura · tokeniza · enruta">Captures · tokenizes · routes</span>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="flow-node">
+          <span class="flow-num">03</span>
+          <span class="flow-name" data-en="Acquirer" data-es="Adquirente">Acquirer</span>
+          <span class="flow-role" data-en="Processes · settles" data-es="Procesa · liquida">Processes · settles</span>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="flow-node">
+          <span class="flow-num">04</span>
+          <span class="flow-name" data-en="Network" data-es="Red">Network</span>
+          <span class="flow-role" data-en="Visa · Mastercard · local" data-es="Visa · Mastercard · local">Visa · Mastercard · local</span>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+        <div class="flow-node">
+          <span class="flow-num">05</span>
+          <span class="flow-name" data-en="Issuer" data-es="Emisor">Issuer</span>
+          <span class="flow-role" data-en="Approves · declines" data-es="Aprueba · declina">Approves · declines</span>
+        </div>
+      </div>
+    </div>
+
     <div class="stack-groups">
       <div class="stack-group glass reveal">
         <div class="g-label" data-en="Networks & franchises" data-es="Redes y franquicias">Networks &amp; franchises</div>
+        <p class="g-desc" data-default-en="Hover a chip to see its role." data-default-es="Pasa el cursor sobre un chip para ver su rol."></p>
         <div class="stack-chips">
-          <span class="chip accent"><span class="chip-dot"></span>Visa</span>
-          <span class="chip accent"><span class="chip-dot"></span>Mastercard</span>
-          <span class="chip"><span class="chip-dot"></span>American Express</span>
-          <span class="chip"><span class="chip-dot"></span>Diners</span>
-          <span class="chip"><span class="chip-dot"></span>Cash networks</span>
-          <span class="chip"><span class="chip-dot"></span>Local rails</span>
+          <span class="chip accent" tabindex="0" data-desc-en="The dominant global rail — most LATAM volume flows here." data-desc-es="El riel global dominante — el grueso del volumen LATAM corre por aquí."><span class="chip-dot"></span>Visa</span>
+          <span class="chip accent" tabindex="0" data-desc-en="The other half of card volume — slightly different rules, same rigor." data-desc-es="La otra mitad del volumen de tarjetas — reglas distintas, misma rigurosidad."><span class="chip-dot"></span>Mastercard</span>
+          <span class="chip" tabindex="0" data-desc-en="Premium segment — closed-loop scheme with its own integration quirks." data-desc-es="Segmento premium — esquema cerrado con sus propias particularidades."><span class="chip-dot"></span>American Express</span>
+          <span class="chip" tabindex="0" data-desc-en="Niche but mandatory in Colombia for some merchant categories." data-desc-es="Nicho pero obligatorio en Colombia para ciertos rubros."><span class="chip-dot"></span>Diners</span>
+          <span class="chip" tabindex="0" data-desc-en="Efecty, PSE, OXXO — the cash and bank-transfer rails LATAM still leans on." data-desc-es="Efecty, PSE, OXXO — los rieles de efectivo y transferencia que aún manda LATAM."><span class="chip-dot"></span>Cash networks</span>
+          <span class="chip" tabindex="0" data-desc-en="ACH, instant payments — where compliance gets country-specific fast." data-desc-es="ACH, pagos instantáneos — el cumplimiento se vuelve país-específico rápido."><span class="chip-dot"></span>Local rails</span>
         </div>
       </div>
 
       <div class="stack-group glass reveal" data-delay="1">
         <div class="g-label" data-en="Standards & protocols" data-es="Estándares y protocolos">Standards &amp; protocols</div>
+        <p class="g-desc" data-default-en="Hover a chip to see its role." data-default-es="Pasa el cursor sobre un chip para ver su rol."></p>
         <div class="stack-chips">
-          <span class="chip accent"><span class="chip-dot"></span>ISO 8583</span>
-          <span class="chip accent"><span class="chip-dot"></span>PCI DSS</span>
-          <span class="chip"><span class="chip-dot"></span>3-D Secure</span>
-          <span class="chip"><span class="chip-dot"></span>EMV</span>
-          <span class="chip"><span class="chip-dot"></span>Webhooks</span>
-          <span class="chip"><span class="chip-dot"></span>OAuth 2</span>
+          <span class="chip accent" tabindex="0" data-desc-en="The grammar hosts speak — I've debugged 0100/0110 in production." data-desc-es="La gramática que hablan los hosts — he depurado 0100/0110 en producción."><span class="chip-dot"></span>ISO 8583</span>
+          <span class="chip accent" tabindex="0" data-desc-en="The compliance floor — every integration starts here, not ends." data-desc-es="El piso de cumplimiento — cada integración empieza aquí, no termina."><span class="chip-dot"></span>PCI DSS</span>
+          <span class="chip" tabindex="0" data-desc-en="Liability shift + friction — where UX meets fraud math." data-desc-es="Cambio de responsabilidad + fricción — donde UX se encuentra con la matemática del fraude."><span class="chip-dot"></span>3-D Secure</span>
+          <span class="chip" tabindex="0" data-desc-en="Chip-level cryptography — table stakes for card-present." data-desc-es="Criptografía a nivel de chip — la base para presencial."><span class="chip-dot"></span>EMV</span>
+          <span class="chip" tabindex="0" data-desc-en="Async truth source — the reason your merchant dashboard is correct." data-desc-es="Fuente asíncrona de verdad — la razón por la que el dashboard del comercio cuadra."><span class="chip-dot"></span>Webhooks</span>
+          <span class="chip" tabindex="0" data-desc-en="Server-to-server trust — how partners auth without sharing secrets." data-desc-es="Confianza entre servidores — cómo los partners se autentican sin compartir secretos."><span class="chip-dot"></span>OAuth 2</span>
         </div>
       </div>
 
       <div class="stack-group glass reveal" data-delay="2">
         <div class="g-label" data-en="Channels & products" data-es="Canales y productos">Channels &amp; products</div>
+        <p class="g-desc" data-default-en="Hover a chip to see its role." data-default-es="Pasa el cursor sobre un chip para ver su rol."></p>
         <div class="stack-chips">
-          <span class="chip"><span class="chip-dot"></span>E-commerce</span>
-          <span class="chip"><span class="chip-dot"></span>Card-present</span>
-          <span class="chip"><span class="chip-dot"></span>Tap-to-Phone</span>
-          <span class="chip"><span class="chip-dot"></span>POS</span>
-          <span class="chip"><span class="chip-dot"></span>Issuing</span>
-          <span class="chip"><span class="chip-dot"></span>Acquiring</span>
-          <span class="chip"><span class="chip-dot"></span>APMs</span>
+          <span class="chip" tabindex="0" data-desc-en="Web checkout — where conversion lives and dies on integration quality." data-desc-es="Checkout web — donde la conversión vive y muere por la calidad de la integración."><span class="chip-dot"></span>E-commerce</span>
+          <span class="chip" tabindex="0" data-desc-en="Terminals and dip/swipe/contactless — a different latency budget." data-desc-es="Terminales y dip/swipe/contactless — otro presupuesto de latencia."><span class="chip-dot"></span>Card-present</span>
+          <span class="chip" tabindex="0" data-desc-en="Phones as POS — kills hardware cost for small merchants." data-desc-es="Celulares como POS — elimina el costo de hardware para comercios pequeños."><span class="chip-dot"></span>Tap-to-Phone</span>
+          <span class="chip" tabindex="0" data-desc-en="Traditional point of sale — still 70% of LATAM retail." data-desc-es="Punto de venta tradicional — sigue siendo el 70% del retail LATAM."><span class="chip-dot"></span>POS</span>
+          <span class="chip" tabindex="0" data-desc-en="Issuing cards as a product — BIN sponsorship, tokens, lifecycle." data-desc-es="Emitir tarjetas como producto — patrocinio de BIN, tokens, ciclo de vida."><span class="chip-dot"></span>Issuing</span>
+          <span class="chip" tabindex="0" data-desc-en="Accepting payments on behalf — risk, settlement, chargebacks." data-desc-es="Aceptar pagos por cuenta del comercio — riesgo, liquidación, contracargos."><span class="chip-dot"></span>Acquiring</span>
+          <span class="chip" tabindex="0" data-desc-en="Pix, Yape, Nequi, Bizum — region-specific methods that move volume." data-desc-es="Pix, Yape, Nequi, Bizum — métodos regionales que mueven volumen."><span class="chip-dot"></span>APMs</span>
         </div>
       </div>
 
       <div class="stack-group glass reveal" data-delay="3">
         <div class="g-label" data-en="Practice" data-es="Práctica">Practice</div>
+        <p class="g-desc" data-default-en="Hover a chip to see its role." data-default-es="Pasa el cursor sobre un chip para ver su rol."></p>
         <div class="stack-chips">
-          <span class="chip"><span class="chip-dot"></span>Integration playbooks</span>
-          <span class="chip"><span class="chip-dot"></span>Pre-sales engineering</span>
-          <span class="chip"><span class="chip-dot"></span>Fraud prevention</span>
-          <span class="chip"><span class="chip-dot"></span>SQL & BI</span>
-          <span class="chip"><span class="chip-dot"></span>Salesforce</span>
-          <span class="chip"><span class="chip-dot"></span>AWS</span>
-          <span class="chip"><span class="chip-dot"></span>AI-driven automation</span>
+          <span class="chip" tabindex="0" data-desc-en="Playbooks that turn 6-month integrations into 6-week ones." data-desc-es="Playbooks que convierten integraciones de 6 meses en 6 semanas."><span class="chip-dot"></span>Integration playbooks</span>
+          <span class="chip" tabindex="0" data-desc-en="Translating tech depth into deals that actually close." data-desc-es="Traducir profundidad técnica en deals que de verdad cierran."><span class="chip-dot"></span>Pre-sales engineering</span>
+          <span class="chip" tabindex="0" data-desc-en="Rules, scoring, manual review — keeping false positives sane." data-desc-es="Reglas, scoring, revisión manual — manteniendo los falsos positivos a raya."><span class="chip-dot"></span>Fraud prevention</span>
+          <span class="chip" tabindex="0" data-desc-en="Going from a Looker dashboard to a root-cause query." data-desc-es="Pasar de un dashboard en Looker a la query que explica la causa raíz."><span class="chip-dot"></span>SQL & BI</span>
+          <span class="chip" tabindex="0" data-desc-en="Where CRM meets the real merchant lifecycle." data-desc-es="Donde el CRM se encuentra con el ciclo de vida real del comercio."><span class="chip-dot"></span>Salesforce</span>
+          <span class="chip" tabindex="0" data-desc-en="The infra layer most payment stacks sit on." data-desc-es="La capa de infra sobre la que se monta la mayoría de los stacks de pagos."><span class="chip-dot"></span>AWS</span>
+          <span class="chip" tabindex="0" data-desc-en="Agents and LLMs applied to ops — where the next wins are." data-desc-es="Agentes y LLMs aplicados a operaciones — donde están las próximas victorias."><span class="chip-dot"></span>AI-driven automation</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section class="contact shell" id="contact" data-screen-label="Contact">
+  <section class="contact shell scroll-stage" id="contact" data-screen-label="Contact">
     <div class="section-head">
       <p class="eyebrow reveal" data-en="Contact" data-es="Contacto">Contact</p>
       <h2 class="display reveal" data-delay="1"
@@ -394,17 +442,17 @@
     <div class="tweak-row">
       <div class="label">
         <span data-en="Glass blur" data-es="Desenfoque del cristal">Glass blur</span>
-        <span id="blur-val">28px</span>
+        <span id="blur-val">40px</span>
       </div>
-      <input type="range" id="blur-slider" min="8" max="60" step="2" value="28" />
+      <input type="range" id="blur-slider" min="8" max="60" step="2" value="40" />
     </div>
 
     <div class="tweak-row">
       <div class="label">
         <span data-en="Glass opacity" data-es="Opacidad del cristal">Glass opacity</span>
-        <span id="opacity-val">36%</span>
+        <span id="opacity-val">22%</span>
       </div>
-      <input type="range" id="opacity-slider" min="15" max="80" step="1" value="36" />
+      <input type="range" id="opacity-slider" min="15" max="80" step="1" value="22" />
     </div>
 
     <div class="tweak-row">
