@@ -139,20 +139,25 @@
       mesh.style.transform = `translate3d(0, ${meshY}px, 0)`;
     }
 
-    // Section focus shift — each .scroll-stage gets --section-p ∈ [0,1]
-    // where 1 means its center is near the viewport center.
-    const viewportCenter = y + vh / 2;
-    const falloff = vh * 0.75;
+    // Section focus shift — each .scroll-stage gets --section-p ∈ [0,1].
+    // Only sections ABOVE the viewport (already scrolled past) get blurred.
+    // Visible and upcoming sections stay sharp (p = 1).
+    const falloff = vh * 0.6;
     for (let i = 0; i < scrollStages.length; i++) {
       const el = scrollStages[i];
       const rect = el.getBoundingClientRect();
-      const elCenter = rect.top + window.scrollY + rect.height / 2;
-      const distance = Math.abs(viewportCenter - elCenter);
-      // p = 1 at center, 0 at falloff distance away
-      const p = Math.max(0, Math.min(1, 1 - distance / falloff));
-      // Smoothstep for nicer easing
-      const eased = p * p * (3 - 2 * p);
-      el.style.setProperty("--section-p", eased.toFixed(3));
+      let p;
+      if (rect.bottom > 0) {
+        // Section still visible (bottom edge hasn't crossed viewport top): sharp
+        p = 1;
+      } else {
+        // Section fully above viewport: fade based on how far past it is
+        const dist = -rect.bottom;
+        p = Math.max(0, 1 - dist / falloff);
+        // Smoothstep
+        p = p * p * (3 - 2 * p);
+      }
+      el.style.setProperty("--section-p", p.toFixed(3));
     }
 
     ticking = false;
@@ -197,7 +202,6 @@
      The CSS uses --prox to scale, lift, and intensify the background.
   ---------------------------------------------------------------------- */
   const proximityGroups = [
-    { selector: ".stack-chips", child: ".chip", radius: 160, max: 1 },
     { selector: ".foundation-logos-row", child: "a", radius: 140, max: 1 },
     { selector: ".cap-grid", child: ".cap-card", radius: 320, max: 0.4 }
   ];
@@ -240,38 +244,6 @@
       proximityTargets.forEach(g => g.children.forEach(c => c.style.setProperty("--prox", 0)));
     });
   }
-
-  /* ---------- Stack chip descriptions ----------
-     On hover/focus/touch, show the chip's description in the group's .g-desc bar.
-  ---------------------------------------------------------------------- */
-  document.querySelectorAll(".stack-group").forEach((group) => {
-    const desc = group.querySelector(".g-desc");
-    const chips = group.querySelectorAll(".chip");
-    if (!desc) return;
-
-    function getCurrentLang() {
-      return document.documentElement.lang || localStorage.getItem(LANG_KEY) || "en";
-    }
-
-    function showDescFor(chip) {
-      const lang = getCurrentLang();
-      const text = chip.getAttribute(`data-desc-${lang}`) || chip.getAttribute("data-desc-en") || "";
-      desc.textContent = text;
-      desc.classList.add("active");
-    }
-
-    function clearDesc() {
-      desc.classList.remove("active");
-    }
-
-    chips.forEach((chip) => {
-      chip.addEventListener("pointerenter", () => showDescFor(chip));
-      chip.addEventListener("focus", () => showDescFor(chip));
-      chip.addEventListener("click", () => showDescFor(chip));
-      chip.addEventListener("pointerleave", clearDesc);
-      chip.addEventListener("blur", clearDesc);
-    });
-  });
 
   /* ---------- Tweaks panel ----------
      Protocol: register message listener first, then announce availability.
