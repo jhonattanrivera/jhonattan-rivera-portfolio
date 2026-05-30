@@ -5,9 +5,17 @@
 (function () {
   "use strict";
 
-  /* ---------- Year ---------- */
+  /* ---------- Year + years-in-payments counter ---------- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Auto-compute years in payments from start year (2020).
+  const YEARS_START = 2020;
+  const yearsCountEl = document.getElementById("years-count");
+  if (yearsCountEl) {
+    const years = Math.max(1, new Date().getFullYear() - YEARS_START);
+    yearsCountEl.textContent = String(years);
+  }
 
   /* ---------- i18n EN/ES ---------- */
   const LANG_KEY = "jr-lang";
