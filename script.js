@@ -140,21 +140,23 @@
     }
 
     // Section focus shift — each .scroll-stage gets --section-p ∈ [0,1].
-    // Only sections ABOVE the viewport (already scrolled past) get blurred.
-    // Visible and upcoming sections stay sharp (p = 1).
-    const falloff = vh * 0.6;
+    // Sharp while the section's bottom edge is in the lower portion of the
+    // viewport (still in the reading zone). Blur progressively kicks in as
+    // the bottom edge climbs into the top portion — so you SEE the section
+    // blurring as it leaves the screen. Sections below the viewport stay
+    // sharp because their bottom is well below the sharp threshold.
+    const sharpZone = vh * 0.35;  // bottom below this = still in focus
+    const fadeRange = vh * 0.55;  // distance to ramp from sharp to fully blurred
     for (let i = 0; i < scrollStages.length; i++) {
       const el = scrollStages[i];
       const rect = el.getBoundingClientRect();
       let p;
-      if (rect.bottom > 0) {
-        // Section still visible (bottom edge hasn't crossed viewport top): sharp
+      if (rect.bottom >= sharpZone) {
         p = 1;
       } else {
-        // Section fully above viewport: fade based on how far past it is
-        const dist = -rect.bottom;
-        p = Math.max(0, 1 - dist / falloff);
-        // Smoothstep
+        const dist = sharpZone - rect.bottom;
+        p = Math.max(0, 1 - dist / fadeRange);
+        // Smoothstep easing
         p = p * p * (3 - 2 * p);
       }
       el.style.setProperty("--section-p", p.toFixed(3));
