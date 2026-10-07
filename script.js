@@ -252,10 +252,15 @@
   });
 
   const heroScrub = { trigger: ".hero", start: "top top", end: "bottom top", scrub: true };
-  gsap.to(".hero-copy", { yPercent: -16, opacity: 0.15, ease: "none", scrollTrigger: heroScrub });
-  gsap.to(".face", { y: 120, scale: 0.86, ease: "none", scrollTrigger: heroScrub });
   gsap.to(".hero-glow", { yPercent: 35, opacity: 0.3, ease: "none", scrollTrigger: heroScrub });
-  gsap.to(".hero-foot", { opacity: 0, y: -20, ease: "none", scrollTrigger: { ...heroScrub, end: "40% top" } });
+
+  // The hero only fits one screen on desktop. On phones it's taller than the
+  // viewport, so fading it by scroll would dim the text and logos while they're being read.
+  gsap.matchMedia().add("(min-width: 901px)", () => {
+    gsap.to(".hero-copy", { yPercent: -16, opacity: 0.15, ease: "none", scrollTrigger: heroScrub });
+    gsap.to(".face", { y: 120, scale: 0.86, ease: "none", scrollTrigger: heroScrub });
+    gsap.to(".hero-foot", { opacity: 0, y: -20, ease: "none", scrollTrigger: { ...heroScrub, end: "40% top" } });
+  });
 
   /* ---------- Intro ---------- */
   function heroIntro() {
