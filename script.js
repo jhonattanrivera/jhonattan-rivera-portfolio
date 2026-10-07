@@ -259,7 +259,6 @@
   gsap.matchMedia().add("(min-width: 901px)", () => {
     gsap.to(".hero-copy", { yPercent: -16, opacity: 0.15, ease: "none", scrollTrigger: heroScrub });
     gsap.to(".face", { y: 120, scale: 0.86, ease: "none", scrollTrigger: heroScrub });
-    gsap.to(".hero-foot", { opacity: 0, y: -20, ease: "none", scrollTrigger: { ...heroScrub, end: "40% top" } });
   });
 
   /* ---------- Intro ---------- */
