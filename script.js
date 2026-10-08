@@ -70,12 +70,12 @@
   const LANG_KEY = "jr-lang";
   const META = {
     en: {
-      title: "Jhonattan Rivera · Payments",
-      desc: "Jhonattan Rivera has worked in payments since 2020, at gateways, acquirers and issuers across Latin America."
+      title: "Jhonattan Rivera · Integrations Manager | Payments",
+      desc: "Jhonattan Rivera leads the Integrations team at Akua. He has worked in payments since 2020, at gateways, acquirers and issuers across Latin America."
     },
     es: {
-      title: "Jhonattan Rivera · Pagos",
-      desc: "Jhonattan Rivera trabaja en pagos desde 2020, en gateways, adquirentes y emisores de Latinoamérica."
+      title: "Jhonattan Rivera · Integrations Manager | Pagos",
+      desc: "Jhonattan Rivera lidera el equipo de Integraciones en Akua. Trabaja en pagos desde 2020, en gateways, adquirentes y emisores de Latinoamérica."
     }
   };
 
@@ -174,6 +174,8 @@
     else if (id === "#top") window.scrollTo({ top: 0, behavior: "smooth" });
     else target.scrollIntoView({ behavior: "smooth" });
     history.replaceState(null, "", id);
+    // Keyboard users: the skip link should also move focus, not just the view.
+    if (a.classList.contains("skip")) target.focus({ preventScroll: true });
   }));
 
   if (!animate) return;
@@ -269,6 +271,9 @@
         { yPercent: 0, duration: 1.5, ease: "expo.out", stagger: 0.03 }, 0)
       .fromTo(nav, { y: -24, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: "power3.out" }, 0.2)
       .fromTo(".kicker", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, 0.25)
+      // Role first, then specialties: the kicker reads in the order it should be read.
+      .fromTo(".kicker > span", { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.14, clearProps: "transform,opacity" }, 0.3)
       .add(() => revealWords($(".hero-sub"), 0), 0.5)
       .fromTo(".face", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0.3)
       .fromTo(".portrait", { clipPath: "circle(0% at 50% 60%)" },
@@ -475,13 +480,16 @@
   /* ---------- Counters ---------- */
   $$(".count").forEach((el) => {
     const to = parseInt(el.dataset.to, 10) || 0;
+    // Count in step with the card's own staggered fade, not all at once.
+    const host = el.closest("[data-delay]");
+    const lag = host ? parseFloat(host.dataset.delay) || 0 : 0;
     el.textContent = "0";
     ScrollTrigger.create({
       trigger: el, start: "top 88%", once: true,
       onEnter: () => {
         const o = { v: 0 };
         gsap.to(o, {
-          v: to, duration: 1.8, ease: "power3.out", delay: 0.15,
+          v: to, duration: 1.8 + Math.min(to, 40) * 0.01, ease: "power3.out", delay: 0.15 + lag,
           onUpdate: () => { el.textContent = String(Math.round(o.v)); }
         });
       }
@@ -510,7 +518,18 @@
 
   buildMarquees();
   onLangChange.push(buildMarquees);
-  window.addEventListener("resize", () => marquees.forEach((q) => { q.w = $(".marquee-set", q.track).offsetWidth || 1; }));
+  // Re-measure once per frame at most, and keep the offset inside the new loop width so it never jumps.
+  let marqueeResize = 0;
+  window.addEventListener("resize", () => {
+    if (marqueeResize) return;
+    marqueeResize = requestAnimationFrame(() => {
+      marqueeResize = 0;
+      marquees.forEach((q) => {
+        q.w = $(".marquee-set", q.track).offsetWidth || 1;
+        q.x = ((q.x % q.w) - q.w) % q.w;
+      });
+    });
+  });
 
   const mio = new IntersectionObserver((entries) => {
     entries.forEach((e) => { const q = marquees.find((x) => x.m === e.target); if (q) q.vis = e.isIntersecting; });
