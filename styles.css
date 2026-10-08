@@ -1347,5 +1347,10 @@ html:not(.js) .iso-wait { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .grain, .follow-track span { animation: none; }
-  * { transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
