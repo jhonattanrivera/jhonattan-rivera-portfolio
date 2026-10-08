@@ -174,6 +174,8 @@
     else if (id === "#top") window.scrollTo({ top: 0, behavior: "smooth" });
     else target.scrollIntoView({ behavior: "smooth" });
     history.replaceState(null, "", id);
+    // Keyboard users: the skip link should also move focus, not just the view.
+    if (a.classList.contains("skip")) target.focus({ preventScroll: true });
   }));
 
   if (!animate) return;
