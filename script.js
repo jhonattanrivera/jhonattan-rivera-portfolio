@@ -70,12 +70,12 @@
   const LANG_KEY = "jr-lang";
   const META = {
     en: {
-      title: "Jhonattan Rivera · Payments",
-      desc: "Jhonattan Rivera has worked in payments since 2020, at gateways, acquirers and issuers across Latin America."
+      title: "Jhonattan Rivera · Integrations Manager | Payments",
+      desc: "Jhonattan Rivera leads the Integrations team at Akua. He has worked in payments since 2020, at gateways, acquirers and issuers across Latin America."
     },
     es: {
-      title: "Jhonattan Rivera · Pagos",
-      desc: "Jhonattan Rivera trabaja en pagos desde 2020, en gateways, adquirentes y emisores de Latinoamérica."
+      title: "Jhonattan Rivera · Integrations Manager | Pagos",
+      desc: "Jhonattan Rivera lidera el equipo de Integraciones en Akua. Trabaja en pagos desde 2020, en gateways, adquirentes y emisores de Latinoamérica."
     }
   };
 
