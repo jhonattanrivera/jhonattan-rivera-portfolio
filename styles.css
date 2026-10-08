@@ -399,6 +399,10 @@ button { font: inherit; color: inherit; }
   color: var(--dim);
 }
 
+/* Role and specialties wrap as two units, never mid-phrase */
+.kicker > span { display: inline-block; }
+.kicker > span:first-child { color: var(--ink-2); margin-right: .35em; }
+
 .hero-name {
   margin: 0;
   font-weight: 300;
@@ -1131,6 +1135,7 @@ html:not(.js) .iso-wait { display: none; }
 }
 
 .row-b p { margin: 0; color: var(--ink-2); max-width: 560px; transition: color .5s var(--ease); }
+.row-b p + p:not(.row-tags) { margin-top: 12px; }
 
 .row-b .row-tags {
   margin-top: 18px;
