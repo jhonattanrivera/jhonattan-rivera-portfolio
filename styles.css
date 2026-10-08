@@ -1366,5 +1366,5 @@ html:not(.js) .iso-wait { display: none; }
   .menu-btn { min-height: 44px; padding: 0 18px; align-items: center; justify-content: center; }
   .lang button { min-width: 44px; min-height: 44px; }
   .worked-logos a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
-  .menu-foot > a, .elsewhere a, .to-top { display: inline-flex; align-items: center; min-height: 44px; }
+  .menu-foot > a, .elsewhere a, .to-top, .skip, .nav .brand, .contact-body .mail { display: inline-flex; align-items: center; min-height: 44px; }
 }
