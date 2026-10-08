@@ -5,7 +5,8 @@
   --bg-raise: #141412;
   --ink: #f1ede4;
   --ink-2: #bdb8ac;
-  --dim: #6f6b63;
+  --dim: #8a857c;
+  --dim-deco: #6f6b63; /* large decorative text only */
   --faint: #34322e;
   --line: rgba(241, 237, 228, 0.12);
   --yellow: #ffc636;
@@ -228,7 +229,7 @@ main:focus { outline: none; }
 .nav-links a,
 .lang button,
 .menu-btn {
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -411,7 +412,7 @@ main:focus { outline: none; }
 
 .kicker {
   margin: 0 0 22px;
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dim);
@@ -438,7 +439,7 @@ main:focus { outline: none; }
 }
 
 .hero-name .line-in { display: block; white-space: nowrap; }
-.hero-name .dim { color: var(--dim); }
+.hero-name .dim { color: var(--dim-deco); }
 
 .hero-sub {
   max-width: 470px;
@@ -517,7 +518,7 @@ main:focus { outline: none; }
 }
 
 .worked-k {
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dim);
@@ -548,7 +549,7 @@ main:focus { outline: none; }
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -683,7 +684,7 @@ html:not(.js) .thesis-text .int::after { clip-path: none; }
 }
 
 .clock-k {
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dim);
@@ -842,7 +843,7 @@ html:not(.js) .node .dot { background: var(--yellow); border-color: var(--yellow
 .tag.tilt-r { --tilt: 5deg; }
 
 .tag-k {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .14em;
   text-transform: uppercase;
   opacity: .7;
@@ -866,7 +867,7 @@ html:not(.js) .node .dot { background: var(--yellow); border-color: var(--yellow
 
 .story-k {
   margin: 0 0 14px;
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dim);
@@ -912,7 +913,7 @@ html:not(.js) .node .dot { background: var(--yellow); border-color: var(--yellow
   justify-content: space-between;
   gap: 12px;
   padding: 12px 0 14px;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--dim);
@@ -970,9 +971,9 @@ html:not(.js) .iso-wait { display: none; }
 }
 
 @media (max-width: 520px) {
-  .iso { font-size: 11.5px; }
+  .iso { font-size: 12px; }
   .iso-lines li { grid-template-columns: 48px 1fr auto; gap: 10px; }
-  .iso-n { font-size: 10.5px; }
+  .iso-n { font-size: 12px; }
 }
 
 /* Journey, animated mode: pinned stage */
@@ -1074,7 +1075,7 @@ html:not(.js) .iso-wait { display: none; }
   font-variant-numeric: tabular-nums;
 }
 
-.fig-of { color: var(--dim); }
+.fig-of { color: var(--dim-deco); }
 
 .fig-l {
   max-width: 240px;
@@ -1177,7 +1178,7 @@ html:not(.js) .iso-wait { display: none; }
 
 .vocab-k {
   margin: 0 auto 36px;
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dim);
@@ -1192,7 +1193,7 @@ html:not(.js) .iso-wait { display: none; }
   letter-spacing: -0.045em;
 }
 
-.marquee.dim { color: var(--dim); }
+.marquee.dim { color: var(--dim-deco); }
 
 .marquee-track {
   display: inline-flex;
@@ -1261,7 +1262,7 @@ html:not(.js) .iso-wait { display: none; }
 
 .contact-langs {
   margin: 18px 0 0;
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dim);
@@ -1358,4 +1359,12 @@ html:not(.js) .iso-wait { display: none; }
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
+}
+
+/* Touch targets: at least 44x44 on touch devices */
+@media (pointer: coarse), (max-width: 900px) {
+  .menu-btn { min-height: 44px; padding: 0 18px; align-items: center; justify-content: center; }
+  .lang button { min-width: 44px; min-height: 44px; }
+  .worked-logos a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+  .menu-foot > a, .elsewhere a, .to-top { display: inline-flex; align-items: center; min-height: 44px; }
 }
