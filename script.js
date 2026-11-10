@@ -122,8 +122,9 @@
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.clearScrollMemory("manual");
     ScrollTrigger.config({ ignoreMobileResize: true });
-    if (typeof window.Lenis !== "undefined") {
-      lenis = new Lenis({ lerp: 0.1 });
+    const touch = window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(max-width: 900px)").matches;
+    if (!touch && typeof window.Lenis !== "undefined") {
+      lenis = new Lenis({ lerp: 0.18 });
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add((time) => lenis.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
@@ -234,7 +235,7 @@
   }
 
   gsap.ticker.add((time, dt) => {
-    if (heroP >= 1) return;
+    if (!finePointer || heroP >= 1) return;
     cur.x += (tgt.x - cur.x) * 0.06;
     cur.y += (tgt.y - cur.y) * 0.06;
     const floatY = Math.sin(time * 0.8) * 6;
@@ -373,7 +374,7 @@
         intIdx = i;
         k = intK = clamp((head - i) / intSpread);
       } else if (intIdx >= 0) {
-        k = intK; // the period after the word lands with it
+        k = intK;
       } else {
         k = clamp((head - i) / spread);
       }
@@ -385,7 +386,7 @@
 
   gsap.to(th, {
     p: 1, ease: "none",
-    scrollTrigger: { trigger: ".thesis", start: "top top", end: "+=170%", pin: true, scrub: 0.6, anticipatePin: 1 },
+    scrollTrigger: { trigger: ".thesis", start: "top top", end: "+=170%", pin: true, scrub: 0.35, anticipatePin: 1 },
     onUpdate: renderThesis
   });
   onLangChange.push(cacheThesis);
@@ -471,7 +472,7 @@
     scrollTrigger: {
       trigger: route, start: "top top",
       end: () => "+=" + Math.round(window.innerHeight * 4),
-      pin: true, scrub: 0.6, anticipatePin: 1, invalidateOnRefresh: true
+      pin: true, scrub: 0.35, anticipatePin: 1, invalidateOnRefresh: true
     },
     onUpdate: renderRoute
   });
