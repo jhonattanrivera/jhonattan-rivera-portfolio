@@ -998,19 +998,78 @@ html:not(.js) .iso-wait { display: none; }
   .rail { margin: 0 8%; }
   .nodes { height: 64px; }
   .node-name { font-size: 13px; }
+  .rail-wrap { padding-top: 58px; }
+
+  /* Hide desktop-style always-on tags: they overlap on a narrow rail.
+     In animated mode, one sticker pops in on the current step instead.
+     Without JS, the story line below becomes the sticker. */
   .tag { display: none; }
-  .node.worked::before {
+  .js .tag {
+    display: grid;
+    z-index: 4;
+    left: 50%;
+    padding: 6px 10px 7px;
+    pointer-events: none;
+  }
+  .js .tag .tag-k { font-size: 11px; letter-spacing: .12em; }
+  .js .tag .tag-co { font-size: 13px; }
+
+  /* Reached-but-not-current nodes keep a yellow pin so the map stays readable. */
+  .js .node.worked::before {
     content: "";
     position: absolute;
-    top: -16px;
+    top: -14px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: var(--yellow);
     box-shadow: 0 0 10px rgba(255, 198, 54, .6);
-    transition: opacity .4s ease, transform .5s var(--ease);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .35s ease, transform .45s var(--ease);
   }
-  .js .node.worked:not(.is-reached)::before { opacity: 0; transform: translateY(6px); }
+  .js .node.worked.is-reached::before {
+    opacity: 1;
+    transform: none;
+  }
+  .js .node.worked.is-current::before { opacity: 0; }
+
+  /* Override the desktop "stay once reached" behavior: only the active step shows a tag. */
+  .js .node.is-reached .tag,
+  .js .node .tag {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px) rotate(0deg) scale(.86);
+    transition: opacity .3s ease, transform .5s cubic-bezier(.3, 1.6, .5, 1);
+  }
+  .js .node.is-current .tag {
+    opacity: 1;
+    transform: translateX(-50%) rotate(var(--tilt, -5deg));
+  }
+
+  /* Issuer sits on the right edge; keep the sticker inside the viewport. */
+  .js .node[data-i="4"] .tag,
+  .js .node[data-i="4"].is-reached .tag {
+    transform: translateX(calc(-100% + 28px)) translateY(8px) rotate(0deg) scale(.86);
+  }
+  .js .node[data-i="4"].is-current .tag {
+    transform: translateX(calc(-100% + 28px)) rotate(var(--tilt, 5deg));
+  }
+
+  /* Static / reduced-motion fallback: the story line itself is the sticker. */
+  .story-w {
+    display: inline-grid;
+    width: max-content;
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 6px 10px 7px;
+    background: var(--yellow);
+    color: #0b0b0a;
+    border-radius: 6px;
+    box-shadow: 0 10px 24px -10px rgba(255, 198, 54, .5);
+    font-size: 13px;
+    white-space: normal;
+  }
+  .js .story-w { display: none; }
 }
 
 @media (max-width: 520px) {
@@ -1038,15 +1097,17 @@ html:not(.js) .iso-wait { display: none; }
 .js .rail-out { width: 0; }
 .js .rail-back { width: 0; }
 
-.js .tag {
-  opacity: 0;
-  transform: translateX(-30%) translateY(10px) rotate(0deg) scale(.8);
-  transition: opacity .35s ease, transform .6s cubic-bezier(.3, 1.6, .5, 1);
-}
+@media (min-width: 901px) {
+  .js .tag {
+    opacity: 0;
+    transform: translateX(-30%) translateY(10px) rotate(0deg) scale(.8);
+    transition: opacity .35s ease, transform .6s cubic-bezier(.3, 1.6, .5, 1);
+  }
 
-.js .node.is-reached .tag {
-  opacity: 1;
-  transform: translateX(-30%) rotate(var(--tilt, -5deg));
+  .js .node.is-reached .tag {
+    opacity: 1;
+    transform: translateX(-30%) rotate(var(--tilt, -5deg));
+  }
 }
 
 .js .stories { display: block; min-height: 220px; }
@@ -1082,6 +1143,7 @@ html:not(.js) .iso-wait { display: none; }
 
 @media (max-width: 900px) {
   .js .route-pin { gap: 22px; }
+  .js .rail-wrap { padding-top: 56px; }
   .js .route-sub { display: none; }
   .js .clock { position: absolute; right: var(--pad); top: clamp(84px, 13vh, 130px); justify-items: end; }
   .js .clock-n { font-size: clamp(36px, 11vw, 56px); }

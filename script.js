@@ -433,15 +433,17 @@
     route.classList.toggle("is-back", phase === 2);
     route.classList.toggle("is-done", phase === 3);
 
-    nodes.forEach((n, i) => {
-      n.classList.toggle("is-reached", phase > 0 || pos >= i / 4 - 0.001);
-      n.classList.toggle("is-active", phase < 3 && Math.abs(pos - i / 4) < 0.03);
-    });
-
     let idx = 0;
     if (phase >= 2) idx = 5;
     else if (phase === 1) idx = 4;
     else for (let i = 0; i < 5; i++) if (pos >= i / 4 - 0.1) idx = i;
+
+    nodes.forEach((n, i) => {
+      n.classList.toggle("is-reached", phase > 0 || pos >= i / 4 - 0.001);
+      n.classList.toggle("is-active", phase < 3 && Math.abs(pos - i / 4) < 0.03);
+      n.classList.toggle("is-current", i === idx);
+    });
+
     if (idx !== story) {
       stories.forEach((s, i) => s.classList.toggle("is-active", i === idx));
       story = idx;
