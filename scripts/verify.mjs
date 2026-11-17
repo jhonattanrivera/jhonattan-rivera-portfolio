@@ -221,6 +221,99 @@ async function checkLinks(browser, base) {
   return urls.length + anchors.length;
 }
 
+// ---------- Datáfono (Fig 1): digitar un monto, acercar la tarjeta y ver la aprobación ----------
+// Dos ventas por tamaño, una en cada idioma: la primera en el idioma del navegador y la
+// segunda después de cambiarlo con el botón EN/ES. En celular se toca con el dedo; en
+// escritorio la primera venta va con el ratón y la segunda solo con el teclado.
+const POS = {
+  es: { approved: "Aprobada", amount: "$59.900" },
+  en: { approved: "Approved", amount: "$59,900" },
+};
+
+async function posSale(page, label, lang, input, card) {
+  const svg = page.locator("#pos-svg");
+  await svg.scrollIntoViewIfNeeded();
+  // Digita 5 9 9 0 0 7 y borra el 7 con la tecla de borrar: queda 59.900.
+  if (input === "keyboard") {
+    await svg.focus();
+    await page.keyboard.type("599007");
+    await page.keyboard.press("Backspace");
+  } else {
+    for (const k of ["5", "9", "9", "0", "0", "7", "clear"]) {
+      const key = page.locator(`#pos-svg [data-key="${k}"] .hit`);
+      if (input === "touch") await key.tap();
+      else await key.click();
+    }
+  }
+  const amount = (await page.textContent("#pos-amount"))?.trim();
+  if (amount !== POS[lang].amount) fail(`${label}: el datáfono muestra ${amount} y esperaba ${POS[lang].amount} (${lang})`);
+
+  // Acerca la tarjeta: con el botón, tocando la tarjeta dibujada o con Enter.
+  if (card === "enter") await page.keyboard.press("Enter");
+  else {
+    const target = page.locator(card === "button" ? '.pos-acts [data-card="tap"]' : "#pos-svg .pos-card .hit");
+    if (input === "touch") await target.tap();
+    else await target.click();
+  }
+  const approved = await page.waitForFunction((word) => {
+    const s = document.getElementById("pos-status");
+    return document.getElementById("pos-svg").dataset.phase === "ok" && s.textContent === word && s.getBoundingClientRect().width > 0;
+  }, POS[lang].approved, { timeout: 10000 }).then(() => true, () => false);
+  if (!approved) {
+    fail(`${label}: el datáfono no llegó a "${POS[lang].approved}" (${lang}); pantalla: ${await page.textContent("#pos-readout")}`);
+    return;
+  }
+  const code = (await page.textContent("#pos-code"))?.trim() || "";
+  if (!/^[A-Z0-9]{6}$/.test(code)) fail(`${label}: el código de autorización "${code}" no tiene 6 caracteres`);
+  const paid = (await page.textContent("#pos-okamt"))?.trim();
+  if (paid !== POS[lang].amount) fail(`${label}: la venta aprobada dice ${paid} y esperaba ${POS[lang].amount}`);
+}
+
+async function checkPos(browser, base, vp) {
+  const context = await browser.newContext({
+    viewport: vp.viewport, isMobile: vp.mobile, hasTouch: vp.mobile,
+    deviceScaleFactor: vp.mobile ? 3 : 1, locale: vp.locale,
+  });
+  await context.route(BLOCKED, (route) => route.abort());
+  const page = await context.newPage();
+  page.setDefaultTimeout(8000);
+  const label = `${vp.name} datáfono`;
+  watch(page, label, base);
+  const before = failures.length;
+  try {
+    await page.goto(base, { waitUntil: "load" });
+    await page.waitForFunction(() => !document.querySelector(".loader") && !document.documentElement.classList.contains("intro"), null, { timeout: 10000 });
+    const first = vp.locale.startsWith("es") ? "es" : "en";
+    const other = first === "es" ? "en" : "es";
+
+    await posSale(page, label, first, vp.mobile ? "touch" : "mouse", vp.mobile ? "button" : "card");
+    if (vp.mobile) {
+      const box = await page.locator(".pos-fig").boundingBox();
+      if (!box || box.x < 0 || box.x + box.width > vp.viewport.width) fail(`${label}: el datáfono no cabe en ${vp.viewport.width} px`);
+    }
+
+    // Cambia el idioma desde arriba, como un visitante, y la pantalla aprobada lo sigue.
+    await page.locator(".to-top").click();
+    await page.waitForFunction(() => scrollY < 50, null, { timeout: 8000 });
+    if (vp.mobile) {
+      await page.click(".menu-btn");
+      await page.waitForSelector("#menu.open");
+      await page.click(`#menu .lang button[data-lang="${other}"]`);
+      await page.click(".menu-btn");
+      await page.waitForSelector("#menu:not(.open)");
+    } else await page.click(`.nav .lang button[data-lang="${other}"]`);
+    await page.waitForFunction((l) => document.documentElement.lang === l, other, { timeout: 3000 });
+    const shown = await page.textContent("#pos-status");
+    if (shown !== POS[other].approved) fail(`${label}: tras cambiar a ${other} la pantalla dice "${shown}"`);
+
+    await posSale(page, label, other, vp.mobile ? "touch" : "keyboard", vp.mobile ? "card" : "enter");
+  } catch (e) {
+    fail(`${label}: ${e.message.split("\n")[0]}`);
+  }
+  if (failures.length > before) await shot(page, `${vp.name}-datafono`);
+  await context.close();
+}
+
 async function main() {
   const t0 = Date.now();
   await rm(SHOTS, { recursive: true, force: true });
@@ -243,6 +336,8 @@ async function main() {
     await Promise.all([
       runViewport(browser, base, { name: "movil-390", viewport: { width: 390, height: 844 }, mobile: true, locale: "es-CO" }),
       runViewport(browser, base, { name: "escritorio-1440", viewport: { width: 1440, height: 900 }, mobile: false, locale: "en-US" }),
+      checkPos(browser, base, { name: "movil-390", viewport: { width: 390, height: 844 }, mobile: true, locale: "es-CO" }),
+      checkPos(browser, base, { name: "escritorio-1440", viewport: { width: 1440, height: 900 }, mobile: false, locale: "en-US" }),
     ]);
     const secs = ((Date.now() - t0) / 1000).toFixed(1);
     if (failures.length) {
