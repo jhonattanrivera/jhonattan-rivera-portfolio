@@ -40,3 +40,9 @@ tags in `<head>` are English only.
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
+
+## Verify
+
+`npm install` once, then `npm run verify` before every commit and `npm run verify:live` after every deploy.
+It opens the site in headless Chromium at phone and desktop sizes and walks it like a visitor.
+Rules and details: `.claude/skills/verify/SKILL.md`.

@@ -1,0 +1,12 @@
+{
+  "name": "jhonattan-rivera-portfolio",
+  "private": true,
+  "description": "Sitio estático publicado con GitHub Pages. package.json solo existe para la verificación de punta a punta.",
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "verify:live": "node scripts/verify.mjs --live"
+  },
+  "devDependencies": {
+    "playwright": "1.65.0"
+  }
+}
