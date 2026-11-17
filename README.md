@@ -10,6 +10,9 @@ Plain static files, no build step:
 - `index.html`: the whole page. Every translatable string carries `data-en` / `data-es`.
 - `styles.css`: layout, typography and CSS transitions.
 - `script.js`: language toggle (EN/ES, remembered in `localStorage`), text splitting and all motion.
+- `pos.js`: the "Run a card" terminal (Fig 1), an isometric SVG drawn at load time. It follows
+  the EN/ES toggle through `<html lang>`, works with mouse, touch and keyboard, and moves the card
+  instantly under reduced motion. Without JS its section stays `hidden`.
 - `assets/images/`: portrait, logo and company logos.
 - `robots.txt`, `sitemap.xml`: crawler hints.
 

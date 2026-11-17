@@ -313,6 +313,40 @@
       </div>
     </section>
 
+    <!-- Try it: a card terminal that charges (built by pos.js; hidden without JS) -->
+    <section class="pos shell" id="datafono" aria-labelledby="pos-title" hidden>
+      <div class="pos-copy">
+        <p class="pos-k" data-reveal="fade" data-en="Your turn" data-es="Ahora tú">Your turn</p>
+        <h2 class="h2" id="pos-title" data-split data-reveal="words" data-en="Run a card" data-es="Pasa la tarjeta">Run a card</h2>
+        <p class="pos-sub" data-reveal="fade" data-delay="0.15"
+           data-en="Type an amount, then tap or insert the card. It's the same road you just followed, in a couple of seconds."
+           data-es="Digita un monto y acerca o inserta la tarjeta. Es el mismo camino que acabas de seguir, en un par de segundos.">
+          Type an amount, then tap or insert the card. It's the same road you just followed, in a couple of seconds.
+        </p>
+        <p class="pos-help" id="pos-help" data-reveal="fade" data-delay="0.25"
+           data-en="Keyboard: 0–9 to type, Backspace to clear, Esc to cancel, Enter to tap the card."
+           data-es="Teclado: 0–9 para digitar, Retroceso para borrar, Esc para cancelar, Enter para acercar la tarjeta.">
+          Keyboard: 0–9 to type, Backspace to clear, Esc to cancel, Enter to tap the card.
+        </p>
+      </div>
+
+      <figure class="pos-fig" data-reveal="fade" data-delay="0.1">
+        <div class="pos-cap" aria-hidden="true">
+          <span class="hi">Fig 1</span>
+          <span data-en="Card terminal" data-es="Datáfono">Card terminal</span>
+        </div>
+        <svg class="pos-svg" id="pos-svg" viewBox="0 0 617 571" role="group" tabindex="0" aria-describedby="pos-help"></svg>
+        <div class="pos-foot">
+          <div class="pos-acts">
+            <button type="button" class="pos-btn" data-card="tap" data-en="Tap card" data-es="Acercar tarjeta">Tap card</button>
+            <button type="button" class="pos-btn" data-card="chip" data-en="Insert card" data-es="Insertar tarjeta">Insert card</button>
+          </div>
+          <span class="pos-readout" id="pos-readout" aria-hidden="true">ready · $0</span>
+        </div>
+        <p class="pos-live" id="pos-live" aria-live="polite"></p>
+      </figure>
+    </section>
+
     <!-- Figures -->
     <section class="figures shell" aria-label="In numbers">
       <div class="fig" data-reveal="fade">
@@ -448,6 +482,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous"></script>
+  <script src="pos.js"></script>
   <script src="script.js"></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "70ac060f8a824f4d9b9ac4815403a2dd"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
