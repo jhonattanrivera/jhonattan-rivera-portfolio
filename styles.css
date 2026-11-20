@@ -1303,9 +1303,21 @@ html:not(.js) .iso-wait { display: none; }
 .pos-svg .hit { fill: transparent; pointer-events: visiblePainted; }
 .pos-svg .glass { fill: var(--p-glass); stroke: var(--p-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
 .pos-svg .mark { fill: var(--dim-deco); letter-spacing: .1em; }
-.pos-svg .cl { fill: none; stroke: var(--p-detail); stroke-width: 1; vector-effect: non-scaling-stroke; transition: stroke .3s ease; }
-.pos-svg.ready .cl,
-.pos-svg.ready .slot { stroke: var(--ink-2); }
+.pos-svg .shadow { fill: #000; opacity: .55; }
+.pos-svg .bz { fill: #121211; stroke: var(--p-detail); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.pos-svg .sk { fill: #2c2b27; stroke: var(--p-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.pos-svg .nfc path { fill: none; stroke: var(--dim); stroke-width: 1.3; stroke-linecap: round; vector-effect: non-scaling-stroke; transition: stroke .3s ease; }
+.pos-svg.ready .nfc path,
+.pos-svg.ready .pos-slot .slot { stroke: var(--ink-2); }
+
+/* While the card is held: light up the place it would go if released now */
+.pos-svg[data-zone="tap"] .glass,
+.pos-svg[data-zone="tap"] .nfc path,
+.pos-svg[data-zone="chip"] .pos-slot .slot { stroke: var(--yellow); }
+.pos-svg.invite .nfc path,
+.pos-svg.invite .pos-slot .slot { animation: pos-invite .8s ease-in-out 2; }
+
+@keyframes pos-invite { 50% { stroke: var(--yellow); } }
 .pos-svg .led { fill: #262522; stroke: var(--p-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
 .pos-svg .led.on { fill: var(--ink); stroke: var(--ink); }
 
@@ -1342,14 +1354,33 @@ html:not(.js) .iso-wait { display: none; }
 .pos-svg .k.fn .f.t { fill: var(--p-fn-top); }
 .pos-svg .k.down { transform: translateY(3px); }
 .pos-svg .k.down .f { stroke: var(--ink); }
-.pos-svg .kl { fill: var(--ink-2); font-size: 19px; text-anchor: middle; pointer-events: none; }
+.pos-svg .kl { fill: var(--ink-2); font-size: 16px; text-anchor: middle; pointer-events: none; }
+.pos-svg .kt { fill: var(--dim); font-size: 6.5px; letter-spacing: .04em; pointer-events: none; }
+/* Function keys in the colours every terminal uses: red cancels, yellow corrects, green confirms */
+.pos-svg .k.red .f { fill: #7d2a24; }
+.pos-svg .k.red .f.t { fill: #b8443a; }
+.pos-svg .k.amber .f { fill: #9c7414; }
+.pos-svg .k.amber .f.t { fill: #e2ae2f; }
+.pos-svg .k.green .f { fill: #1f5634; }
+.pos-svg .k.green .f.t { fill: #36905a; }
+.pos-svg .k.red .kg,
+.pos-svg .k.green .kg { stroke: #f4f1ea; }
+.pos-svg .k.amber .kg { stroke: #2a1f05; }
 .pos-svg .kg { fill: none; stroke: var(--ink-2); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; pointer-events: none; }
 .pos-svg .k.down .kl { fill: var(--ink); }
-.pos-svg .k.down .kg { stroke: var(--ink); }
+.pos-svg .k:not(.fn).down .kg { stroke: var(--ink); }
 
 /* Card */
-.pos-svg .pos-card,
 .pos-svg .pos-slot { cursor: pointer; }
+/* The card can be picked up and dragged with a finger or the mouse */
+.pos-svg .pos-card .hit { cursor: grab; touch-action: none; }
+.pos-svg.dragging,
+.pos-svg.dragging .hit { cursor: grabbing; }
+.pos-svg.lifted .pos-card { filter: url(#pos-lift); }
+/* With an amount typed, the card nudges toward the slot to show it can move */
+.pos-svg.ready:not(.dragging) .pos-card-in { animation: pos-nudge 2.6s ease-in-out infinite; }
+
+@keyframes pos-nudge { 0%, 70%, 100% { transform: none; } 82% { transform: translate(4px, -2.3px); } }
 .pos-svg .pos-card .f { fill: var(--p-card-edge); stroke: var(--p-card-line); }
 .pos-svg .pos-card .f.t { fill: var(--yellow); }
 .pos-svg .c-chip { fill: #e2ad2a; stroke: var(--p-card-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
