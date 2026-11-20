@@ -29,7 +29,6 @@ En celular (390x844, táctil, español) y en escritorio (1440x900, inglés):
 - Cada enlace del menú (en celular, el menú desplegable) lleva a su sección y el menú se cierra. "Volver arriba" sube.
 - El botón EN/ES cambia los textos y el idioma se recuerda al recargar.
 - Todas las imágenes cargan al bajar por la página.
-- El datáfono (Fig 1) cobra de verdad: digita 59.900 (y borra un dígito de más), acerca la tarjeta y llega a "Aprobada"/"Approved" con un código de autorización de 6 caracteres, una venta por idioma. Al cambiar de idioma, la pantalla aprobada cambia con él. En celular se toca con el dedo y el datáfono cabe en 390 px; en escritorio una venta va con el ratón y otra solo con el teclado.
 - Ningún error de consola, excepción JS, petición fallida ni respuesta 4xx/5xx (la analítica de Cloudflare se bloquea para no contar visitas falsas).
 - Las anclas internas existen, los recursos propios (CSS, JS, imágenes, `robots.txt`, `sitemap.xml`) responden 200 y los enlaces externos usan https.
 
